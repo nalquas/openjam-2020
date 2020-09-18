@@ -1,0 +1,10 @@
+
+# Ignore exports
+build/**
+
+# Godot-specific ignores
+game/.import/
+
+# Mono-specific ignores
+game/.mono/
+game/data_*/

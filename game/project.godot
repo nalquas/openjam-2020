@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="openjam-2020"
+run/main_scene="res://scenes/game/Main.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+quality/shadows/filter_mode=0
+quality/depth/hdr=false
+environment/default_environment="res://default_env.tres"
