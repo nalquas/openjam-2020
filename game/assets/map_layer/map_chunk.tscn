@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/default_sprites/Test_Block.png" type="Texture" id=1]
+[ext_resource path="res://assets/map_layer/shader/map_shadermaterial.tres" type="Material" id=2]
+[ext_resource path="res://scripts/Cloud_Layer/Cloud_chunk.gd" type="Script" id=3]
+
+[node name="map_chunk" type="Sprite"]
+material = ExtResource( 2 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/map_layer/shader/map.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/color = Vector3( 0.8234, 0.749, 0.6941 )
+shader_param/OCTAVES = 8
+shader_param/pos = Vector2( 0, 0 )
