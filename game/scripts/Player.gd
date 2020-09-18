@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("thrust"):
 		thrust = 1.0
 	if Input.is_action_pressed("boost"):
-		thrust = 1.5
+		thrust = 1.75
 	
 	# Asteroids-style directional input
 	if Input.is_action_pressed("left"):
@@ -39,7 +39,7 @@ func _physics_process(delta):
 	rotation = direction.angle()
 	if thrust > 0:
 		speed += direction.normalized() * thrust * acceleration
-		if speed.length() > max_speed:
+		if speed.length() > max_speed * thrust:
 			speed = speed.normalized() * max_speed
 	else:
 		speed = speed * brake_factor
