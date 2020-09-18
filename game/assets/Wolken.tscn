@@ -1,5 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
 
-[node name="Wolken" type="Node2D"]
+[ext_resource path="res://assets/shader/Cloud_shader.shader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+width = 1000
+height = 1000
+noise = SubResource( 2 )
+
+[node name="Cloud_Layer" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+texture = SubResource( 3 )
