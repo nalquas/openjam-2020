@@ -27,10 +27,10 @@ func _physics_process(delta):
 	
 	# Asteroids-style directional input
 	if Input.is_action_pressed("left"):
-		direction = direction.rotated(-delta * 2.0)
+		direction = direction.rotated(-delta * 4.0)
 		mouse_input_disabled = true
 	if Input.is_action_pressed("right"):
-		direction = direction.rotated(delta * 2.0)
+		direction = direction.rotated(delta * 4.0)
 		mouse_input_disabled = true
 	
 	# Mouse-style input
@@ -55,3 +55,6 @@ func _physics_process(delta):
 		new_bullet.direction = direction
 		new_bullet.position = position
 		get_parent().add_child(new_bullet)
+
+func set_camera(state):
+	$Camera2D.current = state

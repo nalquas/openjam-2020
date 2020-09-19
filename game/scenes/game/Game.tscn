@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/map_layer/map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Cloud_layer/Clouds.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Homebase.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node"]
 
 [node name="map" parent="." instance=ExtResource( 1 )]
-scale = Vector2( 20, 20 )
+scale = Vector2( 10, 10 )
 
 [node name="Wolken" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 20, 20 )
+
+[node name="Homebase" parent="." instance=ExtResource( 4 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
