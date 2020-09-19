@@ -14,13 +14,13 @@ func _on_Area_Outer_body_exited(body):
 func _on_Area_Hangar_body_entered(body):
 	# Handle collision with physics body
 	print(String(body.name) + " entered Area_Hangar of Homebase.")
-	if body.name == "Player":
+	if body.is_in_group("Player"):
 		set_camera(true)
 		body.set_camera(false)
 
 func _on_Area_Hangar_body_exited(body):
 	# Handle collision with physics body
 	print(String(body.name) + " exited Area_Hangar of Homebase.")
-	if body.name == "Player":
+	if body.is_in_group("Player"):
 		set_camera(false)
 		body.set_camera(true)
