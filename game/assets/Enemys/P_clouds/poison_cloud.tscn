@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Enemys/Cloud_shader.shader" type="Shader" id=1]
+[ext_resource path="res://scripts/p_clouds/poison_cloud.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 1 )
 shader_param/cldseed = 0.0
 shader_param/color = Vector3( 0, 1, 0.5 )
@@ -21,12 +22,13 @@ height = 70
 noise = SubResource( 3 )
 
 [node name="P_Cloud" type="Area2D"]
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 5 )
+material = SubResource( 2 )
 scale = Vector2( 0.5, 0.9 )
 texture = SubResource( 4 )
