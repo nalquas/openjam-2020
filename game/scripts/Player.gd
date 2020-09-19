@@ -10,11 +10,14 @@ var speed = Vector2(0.0, 0.0)
 
 var mouse_input_disabled = true
 var mouse_vector = direction
+var joy_input_disabled = true
+var joy_vector = direction
 
 func _input(event):
 	# Mouse input events
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		mouse_input_disabled = false
+		joy_input_disabled = true
 		
 		# TODO Fix mouse vector when camera is scaled
 		#if event is InputEventMouseButton:
@@ -26,6 +29,9 @@ func _input(event):
 			#print("")
 		
 		mouse_vector = event.position - (get_canvas_transform().origin + global_position)
+	elif event is InputEventJoypadMotion:
+		mouse_input_disabled = true
+		joy_input_disabled = false
 
 func _physics_process(delta):
 	# Thrust
@@ -39,9 +45,20 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left"):
 		direction = direction.rotated(-delta * 4.0)
 		mouse_input_disabled = true
+		joy_input_disabled = true
 	if Input.is_action_pressed("right"):
 		direction = direction.rotated(delta * 4.0)
 		mouse_input_disabled = true
+		joy_input_disabled = true
+	
+	# Controller-style input
+	if not joy_input_disabled:
+		# Get left analog stick vector
+		var temp_direction = Vector2(Input.get_joy_axis(0, JOY_AXIS_0), Input.get_joy_axis(0, JOY_AXIS_1))
+		
+		# Apply deadzone (require the stick to be pressed by half or more)
+		if temp_direction.length() > 0.70710678118: # sqrt(2)/2
+			direction = temp_direction
 	
 	# Mouse-style input
 	if not mouse_input_disabled:
