@@ -1,7 +1,7 @@
 tool 
 extends Sprite
 export (Vector2) var pos
-
+export (int) var cld_seed
 
 
 
@@ -14,3 +14,4 @@ func _ready():
 func _process(delta):
 	self.material.set_shader_param("x",float(pos.x))
 	self.material.set_shader_param("y",float(pos.y))
+	self.material.set_shader_param("cldseed",float(cld_seed))
