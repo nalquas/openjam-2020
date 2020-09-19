@@ -1,11 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/default_sprites/Test_Block.png" type="Texture" id=1]
-[ext_resource path="res://assets/map_layer/shader/map_shadermaterial.tres" type="Material" id=2]
+[ext_resource path="res://assets/map_layer/shader/map.shader" type="Shader" id=2]
 [ext_resource path="res://scripts/Cloud_Layer/Cloud_chunk.gd" type="Script" id=3]
 
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/water_h = 0.2
+shader_param/low_lands_h = 0.3
+shader_param/middle_lands_h = 0.55
+shader_param/high_lands_h = 0.75
+shader_param/water_c = Vector3( 0.26, 0.35, 0.58 )
+shader_param/low_lands_c = Vector3( 0.18, 0.24, 0.05 )
+shader_param/middle_lands_c = Vector3( 0.45, 0.42, 0.18 )
+shader_param/high_lands_c = Vector3( 0.48, 0.42, 0.36 )
+shader_param/mountaintop = Vector3( 0.85, 0.85, 0.85 )
+shader_param/OCTAVES = 4
+shader_param/x = 1.0
+shader_param/y = 0.0
+
 [node name="map_chunk" type="Sprite"]
-material = ExtResource( 2 )
+material = SubResource( 1 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 pos = Vector2( 1, 0 )
