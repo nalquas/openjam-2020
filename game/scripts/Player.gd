@@ -50,10 +50,12 @@ func _physics_process(delta):
 	# Finish movement
 	rotation = direction.angle()
 	if thrust > 0:
+		# Thrusting
 		speed += direction.normalized() * thrust * acceleration
 		if speed.length() > max_speed * thrust:
-			speed = speed.normalized() * max_speed
+			speed = speed.normalized() * max_speed * thrust
 	else:
+		# Braking
 		speed = speed * brake_factor
 		if speed.length() < 0.01:
 			speed = Vector2(0.0, 0.0)
