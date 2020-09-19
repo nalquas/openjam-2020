@@ -55,3 +55,6 @@ func _physics_process(delta):
 		new_bullet.direction = direction
 		new_bullet.position = position
 		get_parent().add_child(new_bullet)
+
+func set_camera(state):
+	$Camera2D.current = state
