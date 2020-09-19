@@ -11,8 +11,8 @@
 [ext_resource path="res://resources/sprites/Playership/Flames.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 32.0
-height = 99.5923
+radius = 21.12
+height = 55.44
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
@@ -22,7 +22,7 @@ script = ExtResource( 2 )
 scene_bullet = ExtResource( 3 )
 
 [node name="Base" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.33, 0.33 )
 texture = ExtResource( 4 )
 
 [node name="Engine1" type="Sprite" parent="Base"]
@@ -56,3 +56,9 @@ shape = SubResource( 1 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 15.0
+
+[node name="LeftBarrel" type="Node2D" parent="."]
+position = Vector2( 18, -16.666 )
+
+[node name="RightBarrel" type="Node2D" parent="."]
+position = Vector2( 18, 18 )
