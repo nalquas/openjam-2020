@@ -24,8 +24,8 @@ func _ready():
 func _process(delta):
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
-		print ("change")
 		playerpos = new_pos
+		print (playerpos)
 		for x in range(-5+playerpos.x,6+playerpos.x):
 			for y in range(-5+playerpos.y,6+playerpos.y):
 				if not chunks.has(x):
@@ -33,6 +33,7 @@ func _process(delta):
 				if not chunks[x].has(y):
 					var chunk = chunk_scene.instance()
 					chunk.pos = Vector2(x,y)
+					chunk.cld_seed=self.cldseed
 					self.add_child(chunk)
 					chunk.position=(Vector2(100.0*x,100.0*y))
 					chunks[x][y]=chunk

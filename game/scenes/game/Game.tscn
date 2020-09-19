@@ -32,8 +32,4 @@ scale = Vector2( 20, 20 )
 cldseed = 2
 
 [node name="Homebase" parent="." instance=ExtResource( 4 )]
-
-[node name="Wolken" parent="ParallaxBackground/ParallaxLayer3" instance=ExtResource( 2 )]
-scale = Vector2( 20, 20 )
-cld_seed = 14
 [connection signal="menu" from="GameMenu" to="." method="_on_GameMenu_menu"]
