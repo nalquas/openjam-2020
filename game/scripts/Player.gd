@@ -13,6 +13,8 @@ var mouse_vector = direction
 var joy_input_disabled = true
 var joy_vector = direction
 
+var use_left_barrel = true
+
 func _input(event):
 	# Mouse input events
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
@@ -82,7 +84,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		var new_bullet = scene_bullet.instance()
 		new_bullet.direction = direction
-		new_bullet.position = position
+		if use_left_barrel:
+			new_bullet.position = $LeftBarrel.global_position
+		else:
+			new_bullet.position = $RightBarrel.global_position
+		use_left_barrel = !use_left_barrel
 		get_parent().add_child(new_bullet)
 
 func set_camera(state):
