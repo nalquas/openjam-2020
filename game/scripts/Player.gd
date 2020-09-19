@@ -15,7 +15,17 @@ func _input(event):
 	# Mouse input events
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		mouse_input_disabled = false
-		mouse_vector = event.position - get_viewport().size / 2.0
+		
+		# TODO Fix mouse vector when camera is scaled
+		#if event is InputEventMouseButton:
+			#print("event.position: " + String(event.position))
+			#print("get_viewport_rect().size: " + String(get_viewport_rect().size))
+			#print("get_canvas_transform().origin: " + String(get_canvas_transform().origin))
+			#print("global_position: " + String(global_position))
+			#print("get_canvas_transform().origin + global_position: " + String(get_canvas_transform().origin + global_position))
+			#print("")
+		
+		mouse_vector = event.position - (get_canvas_transform().origin + global_position)
 
 func _physics_process(delta):
 	# Thrust
