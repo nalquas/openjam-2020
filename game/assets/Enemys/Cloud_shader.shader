@@ -1,7 +1,7 @@
 shader_type canvas_item;
 //color is #d2bfb1
 uniform float cldseed = 0;
-uniform vec3 color = vec3(0.2,0.749,0.6941);
+uniform vec3 color = vec3(0,1.0,0.5);
 uniform int OCTAVES = 16;
 uniform float x = 0;
 uniform float y = 0;
