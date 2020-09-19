@@ -23,6 +23,7 @@ script = ExtResource( 6 )
 
 [node name="map" parent="ParallaxBackground" instance=ExtResource( 1 )]
 scale = Vector2( 5, 5 )
+motion_scale = Vector2( 0.3, 0.3 )
 
 [node name="Wolken" parent="ParallaxBackground" instance=ExtResource( 2 )]
 scale = Vector2( 20, 20 )
@@ -30,8 +31,8 @@ motion_scale = Vector2( 0.5, 0.5 )
 cldseed = 6
 
 [node name="Wolken2" parent="ParallaxBackground" instance=ExtResource( 2 )]
-position = Vector2( 0.7, 0.7 )
 scale = Vector2( 20, 20 )
+motion_scale = Vector2( 0.7, 0.7 )
 cldseed = 2
 
 [node name="Homebase" parent="." instance=ExtResource( 4 )]
