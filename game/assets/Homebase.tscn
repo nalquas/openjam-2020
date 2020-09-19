@@ -1,19 +1,210 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://resources/default_sprites/Test_Block.png" type="Texture" id=1]
+[ext_resource path="res://resources/sprites/Homebase/Lines.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Homebase.gd" type="Script" id=2]
+[ext_resource path="res://resources/sprites/Homebase/Base.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/Homebase/Bridge4.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/Homebase/Bridge3.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/Homebase/Bridge2.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/Homebase/Bridge1.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/Homebase/Engine.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/Homebase/Shield2.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/Homebase/Towers2.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/Homebase/Towers1.png" type="Texture" id=11]
+[ext_resource path="res://resources/sprites/Homebase/Oxy3.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/Homebase/Oxy2.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/Homebase/Oxy4.png" type="Texture" id=14]
+[ext_resource path="res://resources/sprites/Homebase/Shield3.png" type="Texture" id=15]
+[ext_resource path="res://resources/sprites/Homebase/Shield1.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/Homebase/Oxy1.png" type="Texture" id=17]
+[ext_resource path="res://resources/sprites/Homebase/Towers3.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 600, 300 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 200, 100 )
+extents = Vector2( 104.728, 41.9575 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Base/Engine_TR:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 156.223, -113.9 ), Vector2( 156.223, -113.9 ), Vector2( 156.223, -113.9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Base/Engine_TR:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -179.898, -359.431 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Base/Engine_BR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 159.542, 121.981 ), Vector2( 159.542, 121.981 ), Vector2( 159.542, 121.981 ), Vector2( 159.542, 121.981 ), Vector2( 159.542, 121.981 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Base/Engine_BR:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 270.795, 360.825, 451.166, 540.312, 626.293 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Base/Engine_TL:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -187.299, -113.405 ), Vector2( -187.299, -113.405 ), Vector2( -187.299, -113.405 ), Vector2( -187.299, -113.405 ), Vector2( -187.299, -113.405 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Base/Engine_TL:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 359.854, 450.568, 540.537, 629.904, 718.874 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Base/Engine_BL:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -187.774, 120.614 ), Vector2( -187.774, 120.614 ), Vector2( -187.774, 120.614 ), Vector2( -187.774, 120.614 ), Vector2( -187.774, 120.614 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Base/Engine_BL:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 360.508, 270.907, 179.389, 90.2228, 1.13683 ]
+}
 
 [node name="Homebase" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 12, 6 )
+[node name="Base" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Bridge1" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 7 )
+
+[node name="Bridge2" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 6 )
+
+[node name="Bridge3" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="Bridge4" type="Sprite" parent="Base"]
+texture = ExtResource( 4 )
+
+[node name="Engine_TL" type="Sprite" parent="Base"]
+position = Vector2( -187.299, -113.405 )
+rotation = 7.29762
+texture = ExtResource( 8 )
+
+[node name="Engine_BL" type="Sprite" parent="Base"]
+position = Vector2( -187.774, 120.614 )
+rotation = 5.28755
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Engine_BR" type="Sprite" parent="Base"]
+position = Vector2( 159.542, 121.981 )
+rotation = 5.73558
+texture = ExtResource( 8 )
+
+[node name="Engine_TR" type="Sprite" parent="Base"]
+position = Vector2( 156.223, -113.9 )
+rotation = -1.00841
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Oxy1" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 17 )
+
+[node name="Oxy2" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 13 )
+
+[node name="Oxy3" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 12 )
+
+[node name="Oxy4" type="Sprite" parent="Base"]
+texture = ExtResource( 14 )
+
+[node name="Shield1" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 16 )
+
+[node name="Shield2" type="Sprite" parent="Base"]
+visible = false
+texture = ExtResource( 9 )
+
+[node name="Shield3" type="Sprite" parent="Base"]
+texture = ExtResource( 15 )
+
+[node name="Towers1" type="Sprite" parent="Base"]
+texture = ExtResource( 11 )
+
+[node name="Towers2" type="Sprite" parent="Base"]
+texture = ExtResource( 10 )
+
+[node name="Towers3" type="Sprite" parent="Base"]
+texture = ExtResource( 18 )
+
+[node name="Line" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
 [node name="Area_Outer" type="Area2D" parent="."]
@@ -22,13 +213,17 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Area_Hangar" type="Area2D" parent="."]
-position = Vector2( -400, 0 )
+position = Vector2( -244.738, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Hangar"]
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2( 2, 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 3 )
 [connection signal="body_entered" from="Area_Outer" to="." method="_on_Area_Outer_body_entered"]
 [connection signal="body_exited" from="Area_Outer" to="." method="_on_Area_Outer_body_exited"]
 [connection signal="body_entered" from="Area_Hangar" to="." method="_on_Area_Hangar_body_entered"]
