@@ -8,7 +8,9 @@
 radius = 32.0
 height = 32.0
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
 z_index = 1
 script = ExtResource( 2 )
 scene_bullet = ExtResource( 3 )
