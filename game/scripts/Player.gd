@@ -20,17 +20,8 @@ func _input(event):
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		mouse_input_disabled = false
 		joy_input_disabled = true
-		
-		# TODO Fix mouse vector when camera is scaled
-		#if event is InputEventMouseButton:
-			#print("event.position: " + String(event.position))
-			#print("get_viewport_rect().size: " + String(get_viewport_rect().size))
-			#print("get_canvas_transform().origin: " + String(get_canvas_transform().origin))
-			#print("global_position: " + String(global_position))
-			#print("get_canvas_transform().origin + global_position: " + String(get_canvas_transform().origin + global_position))
-			#print("")
-		
-		mouse_vector = event.position - (get_canvas_transform().origin + global_position)
+
+		mouse_vector = get_global_mouse_position() - position
 	elif event is InputEventJoypadMotion:
 		mouse_input_disabled = true
 		joy_input_disabled = false
