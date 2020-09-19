@@ -10,9 +10,16 @@ func _ready():
 func _input(event):
 	# Allow skipping of splashscreen
 	if event is InputEventKey or event is InputEventJoypadButton or event is InputEventMouseButton:
-		seconds_remaining = 0
+		# Skip                                                                                                                                                                    
+		if not (event is InputEventKey and OS.get_scancode_string(event.scancode) == "F11"):
+			seconds_remaining = 0
 
 func _process(delta):
+	# Handle Fullscreen toggle
+	if Input.is_action_just_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+	
+	# Timer
 	seconds_remaining -= delta
 	
 	# Fade-in
