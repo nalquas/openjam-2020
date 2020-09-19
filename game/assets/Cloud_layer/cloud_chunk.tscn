@@ -11,7 +11,7 @@ shader_param/color = Vector3( 0.8234, 0.749, 0.6941 )
 shader_param/OCTAVES = 8
 shader_param/x = 0.0
 shader_param/y = 0.0
-shader_param/density = 0.45
+shader_param/density = 0.3
 
 [node name="Cloud_chunk" type="Sprite"]
 material = SubResource( 1 )
