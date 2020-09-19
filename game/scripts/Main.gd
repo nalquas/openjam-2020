@@ -14,11 +14,16 @@ func toggle_fullscreen():
 
 func _on_MainMenu_start():
 	$MainMenu.set_visible(false)
+	
+	# Start game
 	var game_instance = scene_game.instance()
 	call_deferred("add_child", game_instance)
 
 func _on_MainMenu_fullscreen():
 	toggle_fullscreen()
+
+func _on_Game_menu():
+	$MainMenu.set_visible(true)
 
 func _on_MainMenu_quit():
 	# Quit application
