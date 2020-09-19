@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/Cloud_layer/shader/Cloud_shader.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/color = Vector3( 0.8234, 0.749, 0.6941 )
+shader_param/OCTAVES = 8
+shader_param/x = 0.0
+shader_param/y = 0.0
+shader_param/density = 0.45
