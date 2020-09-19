@@ -8,3 +8,4 @@
 material = ExtResource( 2 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
+pos = Vector2( 1, 0 )

@@ -12,6 +12,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pos.x=pos.x/1.0
 	self.material.set_shader_param("x",float(pos.x))
 	self.material.set_shader_param("y",float(pos.y))
