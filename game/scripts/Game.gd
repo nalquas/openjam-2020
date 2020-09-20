@@ -16,10 +16,10 @@ func _process(_delta):
 	$GameOverlay/Minimap.update()
 	
 	# Update GUI progress bars
-	$GameOverlay.set_health($Player.hp)
-	$GameOverlay.set_fuel($Player.fuel)
-	$GameOverlay.set_ammo($Player.ammo)
-	$GameOverlay.set_oxygen($Player.oxygen)
+	$GameOverlay.set_health((float($Player.hp) / float($Player.hp_max)) * 100.0)
+	$GameOverlay.set_fuel((float($Player.fuel) / float($Player.fuel_max)) * 100.0)
+	$GameOverlay.set_ammo((float($Player.ammo) / float($Player.ammo_max)) * 100.0)
+	$GameOverlay.set_oxygen((float($Player.oxygen) / float($Player.oxygen_max)) * 100.0)
 
 func _on_GameMenu_menu():
 	emit_signal("menu")
