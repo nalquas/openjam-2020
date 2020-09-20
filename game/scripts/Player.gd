@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (PackedScene) var scene_bullet
+export (AudioStream) var audio_shoot
 
 export (Vector2) var direction = Vector2(0.0, -1.0)
 export (float) var max_speed = 512.0
@@ -24,6 +25,12 @@ var joy_vector = direction
 var use_left_barrel = true
 
 var tracked_metal
+
+func get_main():
+	# Get Main node
+	var mains = get_tree().get_nodes_in_group("Main")
+	if (not mains == null) and (mains.size() > 0):
+		return mains[0]
 
 func _input(event):
 	# Mouse input events
@@ -103,6 +110,10 @@ func _physics_process(delta):
 	
 	# Shooting
 	if Input.is_action_just_pressed("shoot"):
+		# Play shooting sound
+		get_main().play_audio(audio_shoot)
+		
+		# Spawn and configure bullet
 		var new_bullet = scene_bullet.instance()
 		new_bullet.direction = direction
 		new_bullet.rotation = direction.angle()

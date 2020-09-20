@@ -1,6 +1,7 @@
 extends Node
 
 export (PackedScene) var scene_game
+export (PackedScene) var scene_audioplayer
 
 func _ready():
 	$MainMenu.set_visible(true)
@@ -11,6 +12,13 @@ func _process(_delta):
 
 func toggle_fullscreen():
 	OS.window_fullscreen = !OS.window_fullscreen
+
+func play_audio(audio, loop=false, volume_db=0, title="none"):
+	var ap = scene_audioplayer.instance()
+	ap.setAudio(audio, volume_db)
+	ap.loop = loop
+	ap.title = title
+	add_child(ap)
 
 func _on_MainMenu_start():
 	$MainMenu.set_visible(false)
