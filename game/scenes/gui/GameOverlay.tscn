@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/gui/Minimap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/sprites/UI/bottomL.png" type="Texture" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://resources/sprites/UI/progress_yellow.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/UI/progress_blue.png" type="Texture" id=8]
 [ext_resource path="res://resources/sprites/UI/bottomR.png" type="Texture" id=9]
-[ext_resource path="res://scripts/GameOverlay.gd" type="Script" id=10]
+[ext_resource path="res://resources/sprites/icons/heart.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/icons/fuel.png" type="Texture" id=11]
+[ext_resource path="res://resources/sprites/icons/bullet.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/icons/Oxygen.png" type="Texture" id=13]
 
 [node name="GameOverlay" type="CanvasLayer"]
 script = ExtResource( 9 )
@@ -118,6 +121,63 @@ value = 100.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 8 )
 fill_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthIcon" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = -78.0
+margin_right = 129.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 10 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FuelIcon" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = -44.9999
+margin_right = 127.0
+margin_bottom = 55.0001
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoIcon" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -78.0
+margin_right = 44.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OxygenIcon" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -58.0
+margin_top = -42.9999
+margin_right = 42.0
+margin_bottom = 57.0001
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
