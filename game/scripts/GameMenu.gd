@@ -6,7 +6,6 @@ func _ready():
 	set_visible(false)
 
 func set_visible(state):
-	$BackgroundBorder.visible = state
 	$Background.visible = state
 	$VBoxContainer.visible = state
 
