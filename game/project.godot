@@ -15,9 +15,11 @@ _global_script_class_icons={
 
 [application]
 
-config/name="openjam-2020"
+config/name="Flight for Humankind"
+config/description="The remaining survivors of the climate catastrophe depend on you!
+Ensure the survival of your airship's crew by ensuring a steady oxygen supply and defending it against mutated airborne penguins."
 run/main_scene="res://scenes/game/Splashscreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://resources/sprites/Logo5.png"
 
 [display]
 
