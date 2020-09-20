@@ -13,6 +13,7 @@ func _process(_delta):
 	
 	# Update minimap
 	$GameOverlay/Minimap.refresh_home_position($Homebase.position - $Player.position)
+	$GameOverlay/Minimap.update()
 
 func _on_GameMenu_menu():
 	emit_signal("menu")
