@@ -31,6 +31,7 @@ func _input(event):
 		joy_input_disabled = false
 
 func _physics_process(delta):
+	print(position)
 	# Thrust
 	var thrust = 0.0
 	if Input.is_action_pressed("thrust"):
