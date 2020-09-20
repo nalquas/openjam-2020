@@ -7,9 +7,13 @@ export (float) var max_speed = 512.0
 export (float) var acceleration = 21.0
 export (float) var brake_factor = 0.98
 export (int) var hp = 100
+export (int) var hp_max = 100
 export (float) var fuel = 100.0
-export (int) var oxygen = 0.0
+export (float) var fuel_max = 100.0
+export (int) var oxygen = 0
+export (int) var oxygen_max = 10
 export (int) var ammo = 100
+export (int) var ammo_max = 100
 var speed = Vector2(0.0, 0.0)
 
 var mouse_input_disabled = true
@@ -114,6 +118,11 @@ func set_camera(state):
 
 func deal_damage(damage):
 	hp -= damage
+	if hp < 0:
+		hp = 0
 
 func add_oxygen():
-	oxygen += 1
+	if oxygen < oxygen_max:
+		oxygen += 1
+		return true
+	return false
