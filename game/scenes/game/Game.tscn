@@ -40,6 +40,7 @@ cldseed = 2
 [node name="Homebase" parent="." instance=ExtResource( 4 )]
 
 [node name="p_cloud_map" parent="." instance=ExtResource( 8 )]
+player_coord = Vector2( 0, 0 )
 
 [node name="resourcemap" parent="." instance=ExtResource( 9 )]
 [connection signal="menu" from="GameMenu" to="." method="_on_GameMenu_menu"]

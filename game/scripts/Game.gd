@@ -14,6 +14,12 @@ func _process(_delta):
 	# Update minimap
 	$GameOverlay/Minimap.refresh_home_position($Homebase.position - $Player.position)
 	$GameOverlay/Minimap.update()
+	
+	# Update GUI progress bars
+	$GameOverlay.set_health($Player.hp)
+	$GameOverlay.set_fuel($Player.fuel)
+	$GameOverlay.set_ammo($Player.ammo)
+	$GameOverlay.set_oxygen($Player.oxygen)
 
 func _on_GameMenu_menu():
 	emit_signal("menu")
