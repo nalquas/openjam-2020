@@ -14,11 +14,10 @@ func _ready():
 		for y in range(-5,6):
 			var met = metal_scene.instance()
 			var oxy = oxy_scene.instance()
-			self.add_child(oxy)
-			self.add_child(met)
-			print(Vector2(10000.0*(x+randf()),10000.0*(y+randf())))
 			oxy.position=(Vector2(10000.0*(x+randf()),10000.0*(y+randf())))
 			met.position=(Vector2(10000.0*(x+randf()),10000.0*(y+randf())))
+			self.add_child(oxy)
+			self.add_child(met)
 			if not chunks.has(x):
 				chunks[x]=[]
 			chunks[x].append(y)
