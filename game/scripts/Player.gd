@@ -76,6 +76,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		var new_bullet = scene_bullet.instance()
 		new_bullet.direction = direction
+		new_bullet.rotation = direction.angle()
 		if use_left_barrel:
 			new_bullet.position = $LeftBarrel.global_position
 		else:
