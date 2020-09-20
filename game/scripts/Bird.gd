@@ -12,7 +12,9 @@ func _ready():
 
 
 func _process(delta):
-	if home != null:
+	if not home.is_inside_tree():
+		queue_free()
+	if home != null and home.is_inside_tree():
 		var rel_pos = home.global_position - self.global_position 
 		var mov = Vector2(0,0)
 		if rel_pos.x*rel_pos.y>=0:

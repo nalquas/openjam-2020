@@ -9,8 +9,8 @@ var playerpos = Vector2(0,0)
 var chunks = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for x in range(-5,6):
-		for y in range(-5,6):
+	for x in range(-3,4):
+		for y in range(-3,4):
 			var chunk = chunk_scene.instance()
 			chunk.pos = Vector2(x,y)
 			self.add_child(chunk)
@@ -24,8 +24,8 @@ func _process(delta):
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
 		playerpos = new_pos
-		for x in range(-5+playerpos.x,6+playerpos.x):
-			for y in range(-5+playerpos.y,6+playerpos.y):
+		for x in range(-3+playerpos.x,4+playerpos.x):
+			for y in range(-3+playerpos.y,4+playerpos.y):
 				if not chunks.has(x):
 					chunks[x]={}
 				if not chunks[x].has(y):
