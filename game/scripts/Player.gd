@@ -16,16 +16,31 @@ var joy_vector = direction
 
 var use_left_barrel = true
 
+var tracked_metal
+
 func _input(event):
 	# Mouse input events
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		mouse_input_disabled = false
 		joy_input_disabled = true
-
 		mouse_vector = get_global_mouse_position() - position
 	elif event is InputEventJoypadMotion:
 		mouse_input_disabled = true
 		joy_input_disabled = false
+	
+	#activating tractorbeam
+	if Input.is_action_just_pressed("tractor_beam"):
+		if tracked_metal != null:
+			tracked_metal.follow()
+		var overlapping_bodies = $TractorRadius.get_overlapping_bodies()
+		var distance = 10000
+		for x in overlapping_bodies:
+			if x.is_in_group("Metal"):
+				if x.position.distance_to(position) < distance:
+					distance = x.position.distance_to(position)
+					tracked_metal = x
+		if tracked_metal != null:
+			tracked_metal.follow()
 
 func _physics_process(delta):
 	# Thrust
