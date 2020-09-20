@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+var home = null
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,15 +12,11 @@ func _ready():
 
 
 func _process(delta):
-	var average_pos = Vector2(0,0)
-	var average_dir = Vector2(0,0)
-	var average_move_away = Vector2(0,0)
-	for bird in $view.get_overlapping_bodies():
-		if bird.is_in_group("Bird"):
-			var boid_dir = bird.position - self.position
-			average_pos += boid_dir
-			if boid_dir.length() < 200:
-				average_move_away -= boid_dir
-			average_dir += bird.dir
-	dir = (average_pos.normalized()+average_dir.normalized() + average_move_away*3).normalized()
-	move_and_slide(dir*75)
+	if home != null:
+		var rel_pos = home.global_position - self.global_position 
+		var mov = Vector2(0,0)
+		if rel_pos.x*rel_pos.y>=0:
+			mov = Vector2(rel_pos.y,-rel_pos.x).normalized()
+		else:
+			mov = Vector2(-rel_pos.y,rel_pos.x).normalized()
+		move_and_slide(mov*100)
