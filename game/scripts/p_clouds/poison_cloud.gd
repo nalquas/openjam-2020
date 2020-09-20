@@ -12,5 +12,5 @@ func seed_changer(inp):
 func _physics_process(delta):
 	for body in self.get_overlapping_bodies():
 		if body.is_in_group("Player"):
-			body.deal_damage(dmg)
+			body.add_oxy()
 			self.queue_free()
