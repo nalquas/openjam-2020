@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pause.png-00213247b111a3f9aa80c01a2f917c30.stex"
+path="res://.import/progress.png-b0c001cc1723e6b83b6914dfa5832ad5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/UI/pause.png"
-dest_files=[ "res://.import/pause.png-00213247b111a3f9aa80c01a2f917c30.stex" ]
+source_file="res://resources/sprites/UI/progress.png"
+dest_files=[ "res://.import/progress.png-b0c001cc1723e6b83b6914dfa5832ad5.stex" ]
 
 [params]
 
@@ -20,9 +20,9 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=true
-flags/anisotropic=false
+flags/anisotropic=true
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
