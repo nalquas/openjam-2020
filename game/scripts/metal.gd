@@ -16,5 +16,4 @@ func _process(delta):
 		move_and_slide(get_tree().get_nodes_in_group("Player")[0].position - position)
 
 func follow():
-	print("I will follow him")
 	following = !following

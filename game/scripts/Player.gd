@@ -8,7 +8,7 @@ export (float) var acceleration = 21.0
 export (float) var brake_factor = 0.98
 export (int) var hp = 100
 export (float) var fuel = 100.0
-export (int) var oxygen = 100.0
+export (int) var oxygen = 0.0
 export (int) var ammo = 100
 var speed = Vector2(0.0, 0.0)
 
@@ -46,7 +46,6 @@ func _input(event):
 			tracked_metal.follow()
 
 func _physics_process(delta):
-	print(position)
 	# Thrust
 	var thrust = 0.0
 	if Input.is_action_pressed("thrust"):
@@ -114,7 +113,7 @@ func set_camera(state):
 	$Camera2D.current = state
 
 func deal_damage(damage):
-	self.hp -= damage
+	hp -= damage
 
-func add_oxy():
-	pass
+func add_oxygen():
+	oxygen += 1
