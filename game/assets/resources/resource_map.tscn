@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/resource_map.gd" type="Script" id=1]
+[ext_resource path="res://assets/resources/oxy_cloud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/resources/metal.tscn" type="PackedScene" id=3]
+
+[node name="resourcemap" type="Node2D"]
+script = ExtResource( 1 )
+metal_scene = ExtResource( 3 )
+oxy_scene = ExtResource( 2 )

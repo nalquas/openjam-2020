@@ -8,7 +8,7 @@
 [ext_resource path="res://scripts/Game.gd" type="Script" id=6]
 [ext_resource path="res://scenes/gui/GameOverlay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Enemys/P_clouds/p_cloud_map.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/resources/oxy_cloud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/resources/resource_map.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node"]
 script = ExtResource( 6 )
@@ -40,8 +40,6 @@ cldseed = 2
 [node name="Homebase" parent="." instance=ExtResource( 4 )]
 
 [node name="p_cloud_map" parent="." instance=ExtResource( 8 )]
-player_coord = Vector2( 0, 0 )
 
-[node name="P_Cloud" parent="." instance=ExtResource( 9 )]
-position = Vector2( 0, 500 )
+[node name="resourcemap" parent="." instance=ExtResource( 9 )]
 [connection signal="menu" from="GameMenu" to="." method="_on_GameMenu_menu"]
