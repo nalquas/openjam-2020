@@ -12,8 +12,8 @@ func _ready():
 	for i in range(3):
 		var nc = cloud.instance()
 		self.add_child(nc)
-		nc.cld_seed=randi()
 		nc.position=Vector2(50-randf()*200,50-randf()*200)
+		nc.cld_seed=randi()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

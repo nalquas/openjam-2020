@@ -25,7 +25,6 @@ func _process(delta):
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
 		playerpos = new_pos
-		print (playerpos)
 		for x in range(-5+playerpos.x,6+playerpos.x):
 			for y in range(-5+playerpos.y,6+playerpos.y):
 				if not chunks.has(x):

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/Enemys/P_clouds/new_shader.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/cldseed = 0.0
+shader_param/color = Vector3( 0, 1, 0.5 )
+shader_param/OCTAVES = 16
+shader_param/x = 0.0
+shader_param/y = 0.0
+shader_param/density = 0.2

@@ -6,6 +6,7 @@ export (Vector2) var direction = Vector2(0.0, -1.0)
 export (float) var max_speed = 512.0
 export (float) var acceleration = 21.0
 export (float) var brake_factor = 0.98
+export (int) var hp = 100
 var speed = Vector2(0.0, 0.0)
 
 var mouse_input_disabled = true
@@ -84,3 +85,6 @@ func _physics_process(delta):
 
 func set_camera(state):
 	$Camera2D.current = state
+
+func deal_damage(damage):
+	self.hp -= damage

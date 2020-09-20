@@ -38,5 +38,5 @@ cldseed = 2
 
 [node name="Homebase" parent="." instance=ExtResource( 4 )]
 
-[node name="Node2D" parent="." instance=ExtResource( 8 )]
+[node name="p_cloud_map" parent="." instance=ExtResource( 8 )]
 [connection signal="menu" from="GameMenu" to="." method="_on_GameMenu_menu"]

@@ -23,7 +23,6 @@ func _ready():
 func _process(delta):
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
-		print ("change")
 		playerpos = new_pos
 		for x in range(-5+playerpos.x,6+playerpos.x):
 			for y in range(-5+playerpos.y,6+playerpos.y):
