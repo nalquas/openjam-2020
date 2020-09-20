@@ -17,14 +17,16 @@ Made for [Open Jam 2020](https://itch.io/jam/open-jam-2020) (Theme: Airborne)
 - Thrust: Up or W
 - Boost: Shift
 - Shoot: Space
+- Tractor beam: F
 - Menu: ESC
 - Toggle fullscreen: F11
 
 ### Gamepad (assuming Xbox layout)
 - Steer ship: Left stick (or turn using directional pad)
-- Thrust: A
-- Boost: B
-- Shoot: X
+- Thrust: A (Only needed if using directional pad)
+- Boost: B, L1, L2
+- Shoot: X, R1, R2
+- Tractor beam: Y
 - Menu: Start
 - Toggle fullscreen: Select
 

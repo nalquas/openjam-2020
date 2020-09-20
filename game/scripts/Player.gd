@@ -66,12 +66,19 @@ func _physics_process(delta):
 	
 	# Controller-style input
 	if not joy_input_disabled:
-		# Get left analog stick vector
-		var temp_direction = Vector2(Input.get_joy_axis(0, JOY_AXIS_0), Input.get_joy_axis(0, JOY_AXIS_1))
+		# Get analog stick vectors
+		var temp_direction_l = Vector2(Input.get_joy_axis(0, JOY_AXIS_0), Input.get_joy_axis(0, JOY_AXIS_1))
+		var temp_direction_r = Vector2(Input.get_joy_axis(0, JOY_AXIS_2), Input.get_joy_axis(0, JOY_AXIS_3))
 		
 		# Apply deadzone (require the stick to be pressed by half or more)
-		if temp_direction.length() > 0.70710678118: # sqrt(2)/2
-			direction = temp_direction
+		if temp_direction_l.length() > 0.70710678118: # sqrt(2)/2
+			# Left stick: Point and thrust
+			direction = temp_direction_l
+			if thrust == 0.0:
+				thrust = 1.0
+		elif temp_direction_r.length() > 0.70710678118: # sqrt(2)/2
+			# Right stick: Point, don't change thrust
+			direction = temp_direction_r
 	
 	# Mouse-style input
 	if not mouse_input_disabled:
