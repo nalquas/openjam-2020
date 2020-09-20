@@ -6,7 +6,7 @@
 # make html5   - Build for HTML5
 # make android - Build for Android (Requires manual setup beforehand)
 
-GAME_NAME = openjam-2020
+GAME_NAME = flight-for-humankind
 
 .PHONY: all linux windows mac html5
 

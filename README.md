@@ -1,11 +1,14 @@
-# Placeholder title
-A game about surviving in a future earth's atmosphere filled with toxic gases.
+# Flight for Humankind
+The remaining survivors of the climate catastrophe depend on you!
+
+Ensure the survival of your airship's crew by ensuring a steady oxygen supply and defending it against mutated airborne penguins.
 
 Made for [Open Jam 2020](https://itch.io/jam/open-jam-2020) (Theme: Airborne)
 
 ## Used development tools
 - Engine: [Godot 3.2.2](https://godotengine.org/)
-- Art: [Krita](https://krita.org/)
+- Art: [Krita](https://krita.org/) and [GIMP](https://www.gimp.org/)
+- Sound: [Audacity](https://www.audacityteam.org/)
 - Music: [Bosca Ceoil](https://boscaceoil.net/)
 
 ## How to play
