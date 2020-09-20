@@ -7,6 +7,7 @@ func _ready():
 
 func _process(_delta):
 	# Handle menu toggle
+	$p_cloud_map.player_coord = $Player.position
 	if Input.is_action_just_pressed("menu"):
 		$GameMenu.set_visible(!$GameMenu.get_visible())
 	
