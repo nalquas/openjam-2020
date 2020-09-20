@@ -12,7 +12,9 @@ width = 70
 height = 70
 noise = SubResource( 2 )
 
-[node name="P_Cloud" type="Area2D"]
+[node name="P_Cloud" type="Area2D" groups=[
+"Poison",
+]]
 script = ExtResource( 2 )
 cld_seed = 2
 
