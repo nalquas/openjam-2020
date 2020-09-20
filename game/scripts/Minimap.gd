@@ -27,7 +27,7 @@ func _draw():
 		
 		# Metal
 		for node in get_tree().get_nodes_in_group("Metal"):
-			draw_circle(magic_function(node.global_position - player_position), 1, oxygen_color)
+			draw_circle(magic_function(node.global_position - player_position), 1, metal_color)
 		
 		# Enemies (birds)
 		for node in get_tree().get_nodes_in_group("Bird"):
