@@ -126,7 +126,9 @@ tracks/7/keys = {
 "values": [ 360.508, 270.907, 179.389, 90.2228, 1.13683 ]
 }
 
-[node name="Homebase" type="Node2D"]
+[node name="Homebase" type="Node2D" groups=[
+"Homebase",
+]]
 script = ExtResource( 2 )
 
 [node name="Base" type="Sprite" parent="."]
