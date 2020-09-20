@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/resources/new_shadermaterial.tres" type="Material" id=1]
+[ext_resource path="res://scripts/p_clouds/poison_cloud.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 100.0
+
+[sub_resource type="OpenSimplexNoise" id=3]
+
+[sub_resource type="NoiseTexture" id=4]
+width = 300
+height = 300
+noise = SubResource( 3 )
+
+[node name="P_Cloud" type="Area2D"]
+script = ExtResource( 2 )
+cld_seed = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 1 )
+texture = SubResource( 4 )

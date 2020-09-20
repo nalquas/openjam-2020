@@ -1,4 +1,7 @@
-shader_type canvas_item;
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
 //color is #d2bfb1
 uniform float cldseed = 0;
 uniform vec3 color = vec3(0.47,0.7,1.0);
@@ -37,8 +40,17 @@ void fragment() {
 	vec2 motion = vec2(fbm(coord + TIME *0.5));
 	float final = fbm(coord+motion)*UV.x*(1.0-UV.x)*UV.y*(1.0-UV.y)*16.0;
 	if (final > density){
-		float opacity = (final-density)/(1.0-density);
+		float opacity = (final-density)/(1.0-density)*2.0;
 		COLOR = vec4(color,opacity);
 	}
 	else COLOR = vec4(0.0);
-}
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/cldseed = 8.0
+shader_param/color = Vector3( 0.47, 0.7, 1 )
+shader_param/OCTAVES = 16
+shader_param/x = 0.0
+shader_param/y = 0.0
+shader_param/density = 0.2

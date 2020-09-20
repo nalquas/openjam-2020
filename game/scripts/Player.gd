@@ -88,3 +88,6 @@ func set_camera(state):
 
 func deal_damage(damage):
 	self.hp -= damage
+
+func add_oxy():
+	pass
