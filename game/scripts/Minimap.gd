@@ -18,7 +18,7 @@ func _draw():
 	
 	# Get Player position
 	var players = get_tree().get_nodes_in_group("Player")
-	if not players == null:
+	if (not players == null) and (players.size() > 0):
 		var player_position = players[0].global_position
 		
 		# Oxygen clouds

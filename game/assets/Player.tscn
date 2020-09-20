@@ -11,14 +11,14 @@
 [ext_resource path="res://resources/sprites/Playership/Flames.png" type="Texture" id=9]
 [ext_resource path="res://resources/sprites/128px_circle.png" type="Texture" id=10]
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -0.834848, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.231788 )
 colors = PoolColorArray( 1, 0.164062, 0, 1, 1, 0.46875, 0, 1 )
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 21.12
 height = 55.44
 
@@ -41,7 +41,7 @@ spread = 8.0
 gravity = Vector2( 10, 0 )
 initial_velocity = 75.0
 scale_amount = 0.08
-scale_amount_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 1 )
 color_ramp = SubResource( 2 )
 
 [node name="LeftExhaust" type="CPUParticles2D" parent="."]
@@ -56,7 +56,7 @@ spread = 8.0
 gravity = Vector2( 10, 0 )
 initial_velocity = 75.0
 scale_amount = 0.04
-scale_amount_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 1 )
 color_ramp = SubResource( 2 )
 
 [node name="RightExhaust" type="CPUParticles2D" parent="."]
@@ -71,7 +71,7 @@ spread = 8.0
 gravity = Vector2( 10, 0 )
 initial_velocity = 75.0
 scale_amount = 0.04
-scale_amount_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 1 )
 color_ramp = SubResource( 2 )
 
 [node name="Base" type="Sprite" parent="."]
@@ -103,7 +103,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
