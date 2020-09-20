@@ -1,12 +1,17 @@
 extends KinematicBody2D
 
-
+export (PackedScene) var enemy
 var following = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var enemys = randi()%3+2
+	for enemy_nr in range(enemys):
+		var en = enemy.instance()
+		en.home=self
+		en.position = self.position + Vector2(0,300).rotated(2*PI/enemys*enemy_nr)
+		self.get_parent().add_child(en)
 
 
 
