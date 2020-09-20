@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resources/sprites/Playership/Weapons1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://resources/sprites/Playership/Engine2.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/Playership/Engine1.png" type="Texture" id=8]
 [ext_resource path="res://resources/sprites/Playership/Flames.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/128px_circle.png" type="Texture" id=10]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -0.834848, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.231788 )
+colors = PoolColorArray( 1, 0.164062, 0, 1, 1, 0.46875, 0, 1 )
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 21.12
@@ -20,6 +28,51 @@ height = 55.44
 z_index = 1
 script = ExtResource( 2 )
 scene_bullet = ExtResource( 3 )
+
+[node name="CentralExhaust" type="CPUParticles2D" parent="."]
+position = Vector2( -44, 0 )
+amount = 64
+lifetime = 2.0
+speed_scale = 2.5
+local_coords = false
+texture = ExtResource( 10 )
+direction = Vector2( -1, 0 )
+spread = 8.0
+gravity = Vector2( 10, 0 )
+initial_velocity = 75.0
+scale_amount = 0.08
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 2 )
+
+[node name="LeftExhaust" type="CPUParticles2D" parent="."]
+position = Vector2( -44, -18 )
+amount = 64
+lifetime = 2.0
+speed_scale = 2.5
+local_coords = false
+texture = ExtResource( 10 )
+direction = Vector2( -1, 0 )
+spread = 8.0
+gravity = Vector2( 10, 0 )
+initial_velocity = 75.0
+scale_amount = 0.04
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 2 )
+
+[node name="RightExhaust" type="CPUParticles2D" parent="."]
+position = Vector2( -44, 19.5 )
+amount = 64
+lifetime = 2.0
+speed_scale = 2.5
+local_coords = false
+texture = ExtResource( 10 )
+direction = Vector2( -1, 0 )
+spread = 8.0
+gravity = Vector2( 10, 0 )
+initial_velocity = 75.0
+scale_amount = 0.04
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 2 )
 
 [node name="Base" type="Sprite" parent="."]
 scale = Vector2( 0.33, 0.33 )

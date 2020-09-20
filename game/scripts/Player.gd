@@ -7,6 +7,9 @@ export (float) var max_speed = 512.0
 export (float) var acceleration = 21.0
 export (float) var brake_factor = 0.98
 export (int) var hp = 100
+export (float) var fuel = 100.0
+export (int) var oxygen = 100.0
+export (int) var ammo = 100
 var speed = Vector2(0.0, 0.0)
 
 var mouse_input_disabled = true
