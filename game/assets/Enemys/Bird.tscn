@@ -21,7 +21,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 200.0
+radius = 300.0
 height = 400.0
 
 [sub_resource type="CircleShape2D" id=3]
@@ -45,7 +45,7 @@ rotation = 1.39626
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 5
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

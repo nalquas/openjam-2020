@@ -19,7 +19,8 @@ var prefer_attacking_player = false
 
 func _ready():
 	# Use spawned position as start position
-	start_offset = (position - home.global_position).angle()
+	if home != null:
+		start_offset = (position - home.global_position).angle()
 
 func get_main():
 	# Get Main node
