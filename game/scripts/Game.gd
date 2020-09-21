@@ -9,7 +9,7 @@ func _ready():
 func _process(_delta):
 	# Handle menu toggle
 	$p_cloud_map.player_coord = $Player.position
-	if Input.is_action_just_pressed("menu"):
+	if Input.is_action_just_pressed("menu") and not $Player.landed:
 		for obj in get_tree().get_nodes_in_group("pausable"):
 			obj.toggle_pause()
 		$GameMenu.set_visible(!$GameMenu.get_visible())
