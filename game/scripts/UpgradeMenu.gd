@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+export (AudioStream) var audio_success
+export (AudioStream) var audio_not_enough_metal
+
 var base_tank_level = 0
 var base_generator_level = 0
 var base_turret_count = 1
@@ -25,6 +28,18 @@ func refresh(oxygen, metal):
 	self.metal = metal
 	self.oxygen = oxygen
 	$StatusLabel.text = "Remaining Oxygen: " + String(oxygen) + "\nRemaining Metal: " + String(metal)
+
+func get_main():
+	# Get Main node
+	var mains = get_tree().get_nodes_in_group("Main")
+	if (not mains == null) and (mains.size() > 0):
+		return mains[0]
+
+func play_success():
+	get_main().play_audio(audio_success)
+
+func play_not_enough():
+	get_main().play_audio(audio_not_enough_metal)
 
 func _on_UpgradeList_item_activated(index):
 	# Get Player
@@ -70,6 +85,8 @@ func _on_UpgradeList_item_activated(index):
 					dewit = true
 				
 				if dewit:
+					play_success()
+					
 					# Ship  - Speed
 					ship_speed_level += 1
 					player.set_engine_level(ship_speed_level)
@@ -82,19 +99,26 @@ func _on_UpgradeList_item_activated(index):
 						$UpgradeList.set_item_selectable(6, false)
 						$UpgradeList.unselect(6)
 						$UpgradeList.set_item_text(6, "Ship  - Speed (Maxed Out)")
+				else:
+					play_not_enough()
 		7:
 			# Ship  - Oxygen Capacity
 			pass
 		8:
 			# Ship  - Fuel Tank Size
-			if ship_fuel_level == 1 and metal >= 30:
-				metal -= 30
-				player.set_fueltank_level(ship_fuel_level)
-				
-				# Don't allow further upgrades
-				$UpgradeList.set_item_disabled(8, true)
-				$UpgradeList.set_item_selectable(8, false)
-				$UpgradeList.unselect(8)
+			if ship_fuel_level == 1:
+				if metal >= 30:
+					play_success()
+					metal -= 30
+					player.set_fueltank_level(ship_fuel_level)
+					
+					# Don't allow further upgrades
+					$UpgradeList.set_item_disabled(8, true)
+					$UpgradeList.set_item_selectable(8, false)
+					$UpgradeList.unselect(8)
+					$UpgradeList.set_item_text(8, "Ship  - Fuel Tank Size (Maxed Out)")
+				else:
+					play_not_enough()
 		9:
 			# Ship  - Weapon Strength
 			pass

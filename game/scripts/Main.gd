@@ -10,7 +10,7 @@ var mp
 
 func _ready():
 	mp = scene_audioplayer.instance()
-	mp.setAudio(main_track, -5)
+	mp.setAudio(main_track, -7)
 	mp.loop = true
 	mp.title = ""
 	add_child(mp)
