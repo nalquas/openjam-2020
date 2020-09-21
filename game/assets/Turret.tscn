@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Turret.gd" type="Script" id=1]
+[ext_resource path="res://resources/sprites/turret.png" type="Texture" id=2]
+[ext_resource path="res://assets/Bullet.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 473.332
+
+[node name="Turret" type="Node2D"]
+script = ExtResource( 1 )
+scene_bullet = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 14.7065, 0.420921 )
+rotation = 0.0349066
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Barrel" type="Node2D" parent="."]
+position = Vector2( 38.9944, -0.420925 )
+
+[node name="Bird_Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird_Detector"]
+shape = SubResource( 1 )
