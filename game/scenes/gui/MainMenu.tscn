@@ -83,10 +83,19 @@ custom_fonts/font = ExtResource( 3 )
 text = "Toggle Music"
 flat = true
 
-[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+[node name="ButtonCredits" type="Button" parent="VBoxContainer"]
 margin_top = 87.0
 margin_right = 152.0
 margin_bottom = 112.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 3 )
+text = "Credits"
+flat = true
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+margin_top = 116.0
+margin_right = 152.0
+margin_bottom = 141.0
 grow_horizontal = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Quit"
@@ -122,4 +131,5 @@ __meta__ = {
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonFullscreen" to="." method="_on_ButtonFullscreen_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonMusic" to="." method="_on_ButtonMusic_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredits" to="." method="_on_ButtonCredits_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]

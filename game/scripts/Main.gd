@@ -14,7 +14,7 @@ func _ready():
 	mp.loop = true
 	mp.title = ""
 	add_child(mp)
-	
+	$CreditsPage.set_visible(false)
 	$MainMenu.set_visible(true)
 
 func _process(_delta):
@@ -65,3 +65,14 @@ func _on_MainMenu_toggleMusic():
 		mp.loop = true
 		mp.title = ""
 		add_child(mp)
+
+
+func _on_MainMenu_openCredits():
+	$MainMenu.set_visible(false)
+	$MainMenu/Background.set_visible(true)
+	$CreditsPage.set_visible(true)
+
+
+func _on_CreditsPage_back():
+	$CreditsPage.set_visible(false)
+	$MainMenu.set_visible(true)
