@@ -20,16 +20,20 @@ func _physics_process(delta):
 	# Handle movement
 	if stay_home:
 		if home != null:
-			# Circle around home
-			time_offset += delta
-			position = home.global_position + Vector2(
-				192.0 * cos(start_offset + 2*PI + time_offset),
-				192.0 * sin(start_offset + 2*PI + time_offset)
-			)
-			
-			# Stop staying at metal if it is taken by the player
-			if home.following or home.collected:
-				stay_home = false
+			if home.is_inside_tree():
+				# Circle around home
+				time_offset += delta
+				position = home.global_position + Vector2(
+					192.0 * cos(start_offset + 2*PI + time_offset),
+					192.0 * sin(start_offset + 2*PI + time_offset)
+				)
+				
+				# Stop staying at metal if it is taken by the player
+				if home.following or home.collected:
+					stay_home = false
+			else:
+				# If chunk is removed, despawn
+				queue_free()
 		else:
 			stay_home = false
 	else:
