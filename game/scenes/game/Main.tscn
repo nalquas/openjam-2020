@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/gui/MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://audio/Klick.wav" type="AudioStream" id=6]
 [ext_resource path="res://scenes/gui/CreditsPage.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/gui/GameOverScreen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/gui/HowToPlay.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node" groups=[
 "Main",
@@ -23,10 +24,14 @@ click_sound = ExtResource( 6 )
 [node name="CreditsPage" parent="." instance=ExtResource( 7 )]
 
 [node name="GameOverScreen" parent="." instance=ExtResource( 8 )]
+
+[node name="HowToPlay" parent="." instance=ExtResource( 9 )]
 [connection signal="fullscreen" from="MainMenu" to="." method="_on_MainMenu_fullscreen"]
+[connection signal="howTo" from="MainMenu" to="." method="_on_MainMenu_howTo"]
 [connection signal="openCredits" from="MainMenu" to="." method="_on_MainMenu_openCredits"]
 [connection signal="quit" from="MainMenu" to="." method="_on_MainMenu_quit"]
 [connection signal="start" from="MainMenu" to="." method="_on_MainMenu_start"]
 [connection signal="toggleMusic" from="MainMenu" to="." method="_on_MainMenu_toggleMusic"]
 [connection signal="back" from="CreditsPage" to="." method="_on_CreditsPage_back"]
 [connection signal="gameoverback" from="GameOverScreen" to="." method="_on_GameOverScreen_gameoverback"]
+[connection signal="howToBack" from="HowToPlay" to="." method="_on_HowToPlay_howToBack"]
