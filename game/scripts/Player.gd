@@ -169,7 +169,7 @@ func _physics_process(delta):
 						oxygen = 0
 					
 					# Check for liftoff request
-					if Input.is_action_just_pressed("tractor_beam"):
+					if Input.is_action_just_pressed("menu") or Input.is_action_just_pressed("tractor_beam"):
 						liftoff()
 			else:
 				# Liftoff
