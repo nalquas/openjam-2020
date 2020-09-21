@@ -9,6 +9,7 @@ func set_visible(state):
 	$VBoxContainer.visible = state
 	$Version.visible = state
 	$Copyright.visible = state
+	$Background.visible = state
 
 func _on_ButtonStart_pressed():
 	emit_signal("start")
