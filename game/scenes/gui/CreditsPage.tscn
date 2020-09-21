@@ -41,16 +41,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -105.893
-margin_top = -7.0
-margin_right = 106.107
-margin_bottom = 7.0
+margin_left = -287.893
+margin_top = -118.5
+margin_right = 288.107
+margin_bottom = -55.5
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = ExtResource( 1 )
-text = "This game was made for the Open Jam2020.
+text = "This game was made for the Open Jam2020 (Theme: Airborne).
 We are Penguin Psychiatry, a group of three hobbyist game developers.
 Visit us on itch.io under penguin-psychiatry.itch.io"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -258.0
+margin_top = -4.76471
+margin_right = 258.0
+margin_bottom = 102.235
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "tools used:
+- Engine: [Godot 3.2.2](https://godotengine.org/)
+- Art: [Krita](https://krita.org/) and [GIMP](https://www.gimp.org/)
+- Sound: [Audacity](https://www.audacityteam.org/)
+- Music: [Bosca Ceoil](https://boscaceoil.net/)"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
