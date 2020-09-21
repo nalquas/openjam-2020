@@ -141,3 +141,8 @@ func set_repair_level(level):
 	$Base/Towers2.visible = false
 	if level == 2:
 		$Base/Towers2.visible = true
+
+func _on_body_body_entered(body):
+	if body.is_in_group("Bird"):
+		body.instakill()
+		hp -= 25
