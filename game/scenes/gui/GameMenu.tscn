@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/UI/pause.png" type="Texture" id=2]
+[ext_resource path="res://resources/fonts/font_16x.tres" type="DynamicFont" id=3]
 
 [node name="GameMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -37,17 +38,19 @@ __meta__ = {
 }
 
 [node name="ButtonContinue" type="Button" parent="VBoxContainer"]
-margin_right = 92.0
-margin_bottom = 20.0
+margin_right = 111.0
+margin_bottom = 25.0
 grow_horizontal = 2
+custom_fonts/font = ExtResource( 3 )
 text = "Continue"
 flat = true
 
 [node name="ButtonMenu" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 92.0
-margin_bottom = 44.0
+margin_top = 29.0
+margin_right = 111.0
+margin_bottom = 54.0
 grow_horizontal = 2
+custom_fonts/font = ExtResource( 3 )
 text = "Exit to Menu"
 flat = true
 [connection signal="pressed" from="VBoxContainer/ButtonContinue" to="." method="_on_ButtonContinue_pressed"]
