@@ -34,6 +34,7 @@ var paused = false
 var tracked_metal
 
 var engine_level = 1
+var oxygen_tank_level = 1
 var fueltank_level = 1
 
 func _ready():
@@ -179,7 +180,6 @@ func _physics_process(delta):
 						ammo = ammo_max
 						fuel = fuel_max
 						hp = hp_max
-						oxygen = 0
 					
 					# Check for liftoff request
 					if Input.is_action_just_pressed("menu") or Input.is_action_just_pressed("tractor_beam"):
@@ -202,7 +202,7 @@ func deal_damage(damage):
 		hp = 0
 
 func add_oxygen():
-	if oxygen < oxygen_max:
+	if oxygen < oxygen_max * oxygen_tank_level:
 		oxygen += 1
 		return true
 	return false
@@ -256,3 +256,6 @@ func set_fueltank_level(level):
 		$Base/Fueltank1.visible = false
 	else:
 		$Base/Fueltank1.visible = true
+
+func set_oxygentank_level(level):
+	oxygen_tank_level = level
