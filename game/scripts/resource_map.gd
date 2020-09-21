@@ -52,6 +52,7 @@ func _physics_process(delta):
 						chunks[x][y]=[met,oxy]
 					elif (chunks[x][y][0] != null) and (not chunks[x][y][0].is_inside_tree()):
 						self.add_child(chunks[x][y][0])
+						chunks[x][y][0].spawn_birds()
 						self.add_child(chunks[x][y][1])
 func playerpos():
 	var players = get_tree().get_nodes_in_group("Player")

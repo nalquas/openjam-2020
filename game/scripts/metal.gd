@@ -10,6 +10,8 @@ export (AudioStream) var metal_collected
 
 func _ready():
 	# Spawn birds
+	spawn_birds()
+func spawn_birds():
 	var enemy_count = randi()%3 + 2 # 2-4 birds
 	for enemy_nr in range(enemy_count):
 		# Instance birds and position them around this metal
