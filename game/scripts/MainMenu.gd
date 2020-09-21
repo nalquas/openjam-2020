@@ -3,6 +3,7 @@ extends CanvasLayer
 signal start
 signal fullscreen
 signal quit
+signal toggleMusic
 
 func set_visible(state):
 	$Title.visible = state
@@ -28,3 +29,8 @@ func _on_ButtonFullscreen_pressed():
 func _on_ButtonQuit_pressed():
 	get_main().play_click()
 	emit_signal("quit")
+
+
+func _on_ButtonMusic_pressed():
+	get_main().play_click()
+	emit_signal("toggleMusic")
