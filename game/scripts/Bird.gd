@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 export (float) var free_fly_speed = 125.0
 
+export (AudioStream) var bird_dies
+export (AudioStream) var bird_hit
+
 var home = null # Configured by Bird spawner (metal)
 var hits = 0
 export var hp = 3
@@ -17,6 +20,12 @@ var prefer_attacking_player = false
 func _ready():
 	# Use spawned position as start position
 	start_offset = (position - home.global_position).angle()
+
+func get_main():
+	# Get Main node
+	var mains = get_tree().get_nodes_in_group("Main")
+	if (not mains == null) and (mains.size() > 0):
+		return mains[0]
 
 func _physics_process(delta):
 	# Handle movement
@@ -74,5 +83,7 @@ func _on_AttackEndArea_body_exited(body):
 func hit():
 	hits += 1
 	if hits >= hp:
+		get_main().play_audio(bird_dies)
 		queue_free()
+	get_main().play_audio(bird_hit)
 
