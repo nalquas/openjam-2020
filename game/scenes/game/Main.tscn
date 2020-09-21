@@ -6,8 +6,6 @@
 [ext_resource path="res://scenes/game/AudioPlayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/main-track.wav" type="AudioStream" id=5]
 
-
-
 [node name="Main" type="Node" groups=[
 "Main",
 ]]
