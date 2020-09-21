@@ -9,13 +9,7 @@ var tracked_bird
 
 var time_since_last_shot = 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-
-func _process(delta):
+func _physics_process(delta):
 	time_since_last_shot += delta
 	if time_since_last_shot > 1:
 		time_since_last_shot = 0
@@ -30,7 +24,6 @@ func _process(delta):
 			bird_direction = tracked_bird.global_position - position
 			look_at(tracked_bird.global_position)
 			shoot()
-
 
 func shoot():
 	var new_bullet = scene_bullet.instance()
