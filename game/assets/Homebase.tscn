@@ -273,4 +273,3 @@ shape = SubResource( 4 )
 [connection signal="body_exited" from="Area_Outer" to="." method="_on_Area_Outer_body_exited"]
 [connection signal="body_entered" from="Area_Hangar" to="." method="_on_Area_Hangar_body_entered"]
 [connection signal="body_exited" from="Area_Hangar" to="." method="_on_Area_Hangar_body_exited"]
-[connection signal="body_entered" from="body" to="." method="_on_body_body_entered"]

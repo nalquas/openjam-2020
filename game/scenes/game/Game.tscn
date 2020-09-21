@@ -45,9 +45,6 @@ distance = 2
 
 [node name="resourcemap" parent="." instance=ExtResource( 9 )]
 distance = 2
-
-[node name="resourcemap2" parent="." instance=ExtResource( 9 )]
-distance = 2
 [connection signal="menu" from="GameMenu" to="." method="_on_GameMenu_menu"]
 [connection signal="landing" from="Player" to="." method="_on_Player_landing"]
 [connection signal="liftoff" from="Player" to="." method="_on_Player_liftoff"]
