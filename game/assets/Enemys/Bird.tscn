@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://audio/Enemy_hit.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/Bird.gd" type="Script" id=2]
@@ -30,6 +30,10 @@ radius = 4000.0
 [sub_resource type="CircleShape2D" id=4]
 radius = 10000.0
 
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 450.0
+height = 400.0
+
 [node name="Bird" type="KinematicBody2D" groups=[
 "Bird",
 "pausable",
@@ -45,7 +49,7 @@ rotation = 1.39626
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -61,5 +65,12 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackEndArea"]
 shape = SubResource( 4 )
+
+[node name="SuicideArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuicideArea"]
+rotation = 1.5708
+shape = SubResource( 5 )
 [connection signal="body_entered" from="AttackStartArea" to="." method="_on_AttackStartArea_body_entered"]
 [connection signal="body_exited" from="AttackEndArea" to="." method="_on_AttackEndArea_body_exited"]
+[connection signal="body_entered" from="SuicideArea" to="." method="_on_SuicideArea_body_entered"]

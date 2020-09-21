@@ -25,6 +25,7 @@ func _ready():
 	set_repair_level(1)
 
 func _physics_process(delta):
+	oxygen -= delta * 0.5/oxygen_generator_level
 	if not paused:
 		elapsed = elapsed + delta
 		if elapsed>60/spawns_p_min:
@@ -140,3 +141,8 @@ func set_repair_level(level):
 	$Base/Towers2.visible = false
 	if level == 2:
 		$Base/Towers2.visible = true
+
+func _on_body_body_entered(body):
+	if body.is_in_group("Bird"):
+		body.instakill()
+		hp -= 25
