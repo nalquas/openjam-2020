@@ -6,8 +6,10 @@ export (PackedScene) var scene_audioplayer
 export (AudioStream) var main_track
 export (AudioStream) var click_sound
 
+var mp
+
 func _ready():
-	var mp = scene_audioplayer.instance()
+	mp = scene_audioplayer.instance()
 	mp.setAudio(main_track, -5)
 	mp.loop = true
 	mp.title = ""
@@ -52,3 +54,14 @@ func _on_Game_menu():
 func _on_MainMenu_quit():
 	# Quit application
 	get_tree().quit()
+
+
+func _on_MainMenu_toggleMusic():
+	if mp != null:
+		mp.despawn()
+	if mp == null:
+		mp = scene_audioplayer.instance()
+		mp.setAudio(main_track, -5)
+		mp.loop = true
+		mp.title = ""
+		add_child(mp)

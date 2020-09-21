@@ -20,3 +20,4 @@ click_sound = ExtResource( 6 )
 [connection signal="fullscreen" from="MainMenu" to="." method="_on_MainMenu_fullscreen"]
 [connection signal="quit" from="MainMenu" to="." method="_on_MainMenu_quit"]
 [connection signal="start" from="MainMenu" to="." method="_on_MainMenu_start"]
+[connection signal="toggleMusic" from="MainMenu" to="." method="_on_MainMenu_toggleMusic"]
