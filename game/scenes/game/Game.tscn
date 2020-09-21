@@ -44,7 +44,6 @@ cldseed = 2
 
 [node name="p_cloud_map" parent="." instance=ExtResource( 8 )]
 distance = 2
-player_coord = Vector2( 0, 0 )
 
 [node name="resourcemap" parent="." instance=ExtResource( 9 )]
 distance = 2

@@ -1,4 +1,4 @@
-tool
+#tool
 extends Node2D
 export (PackedScene) var metal_scene
 export (PackedScene) var oxy_scene
