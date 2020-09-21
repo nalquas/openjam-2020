@@ -2,7 +2,9 @@ extends Node
 
 export (PackedScene) var scene_game
 export (PackedScene) var scene_audioplayer
+
 export (AudioStream) var main_track
+export (AudioStream) var click_sound
 
 func _ready():
 	var mp = scene_audioplayer.instance()
@@ -25,6 +27,13 @@ func play_audio(audio, loop=false, volume_db=0, title="none"):
 	ap.setAudio(audio, volume_db)
 	ap.loop = loop
 	ap.title = title
+	add_child(ap)
+
+func play_click():
+	var ap = scene_audioplayer.instance()
+	ap.setAudio(click_sound)
+	ap.loop = false
+	ap.title = ""
 	add_child(ap)
 
 func _on_MainMenu_start():
