@@ -26,9 +26,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -25.5
-margin_top = -134.39
+margin_top = -199.906
 margin_right = 25.5
-margin_bottom = -109.39
+margin_bottom = -174.906
 custom_fonts/font = ExtResource( 1 )
 text = "Back"
 flat = true
@@ -45,7 +45,12 @@ margin_left = -105.893
 margin_top = -7.0
 margin_right = 106.107
 margin_bottom = 7.0
-text = "For now this is just a sample text"
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "This game was made for the Open Jam2020.
+We are Penguin Psychiatry, a group of three hobbyist game developers.
+Visit us on itch.io under penguin-psychiatry.itch.io"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
