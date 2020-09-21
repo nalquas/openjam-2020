@@ -230,6 +230,12 @@ anims/idle = SubResource( 3 )
 
 [node name="Turret" parent="." instance=ExtResource( 19 )]
 position = Vector2( -118.995, -58.7219 )
+
+[node name="LandingPosition1" type="Node2D" parent="."]
+position = Vector2( -245, -24 )
+
+[node name="LandingPosition2" type="Node2D" parent="."]
+position = Vector2( -245, 27 )
 [connection signal="body_entered" from="Area_Outer" to="." method="_on_Area_Outer_body_entered"]
 [connection signal="body_exited" from="Area_Outer" to="." method="_on_Area_Outer_body_exited"]
 [connection signal="body_entered" from="Area_Hangar" to="." method="_on_Area_Hangar_body_entered"]
