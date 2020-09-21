@@ -17,6 +17,7 @@ func _ready():
 	$CreditsPage.set_visible(false)
 	$MainMenu.set_visible(true)
 	$GameOverScreen.set_visible(false)
+	$HowToPlay.set_visible(false)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
@@ -86,3 +87,14 @@ func _on_CreditsPage_back():
 func _on_GameOverScreen_gameoverback():
 	$GameOverScreen.set_visible(false)
 	$MainMenu.set_visible(true)
+
+
+func _on_HowToPlay_howToBack():
+	$HowToPlay.set_visible(false)
+	$MainMenu.set_visible(true)
+
+
+func _on_MainMenu_howTo():
+	$HowToPlay.set_visible(true)
+	$MainMenu.set_visible(false)
+	$MainMenu/Background.visible = true

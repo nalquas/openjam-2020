@@ -6,6 +6,7 @@ func set_visible(state):
 	$Title.visible = state
 	$ButtonBack.visible = state
 	$Text.visible = state
+	$Text2.visible = state
 
 func get_main():
 	# Get Main node

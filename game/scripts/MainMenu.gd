@@ -5,6 +5,7 @@ signal fullscreen
 signal quit
 signal toggleMusic
 signal openCredits
+signal howTo
 
 func set_visible(state):
 	$Title.visible = state
@@ -40,3 +41,8 @@ func _on_ButtonMusic_pressed():
 func _on_ButtonCredits_pressed():
 	get_main().play_click()
 	emit_signal("openCredits")
+
+
+func _on_ButtonHowToPlay_pressed():
+	get_main().play_click()
+	emit_signal("howTo")
