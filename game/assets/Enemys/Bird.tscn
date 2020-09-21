@@ -21,8 +21,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 60.0
-height = 200.0
+radius = 150.0
+height = 500.0
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 4000.0
@@ -40,6 +40,7 @@ bird_hit = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.39626
+scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "Idle"
 frame = 6

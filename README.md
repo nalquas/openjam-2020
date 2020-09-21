@@ -20,7 +20,7 @@ Made for [Open Jam 2020](https://itch.io/jam/open-jam-2020) (Theme: Airborne)
 - Thrust: Up or W
 - Boost: Shift
 - Shoot: Space
-- Tractor beam: F
+- Tractor beam/Liftoff: F
 - Menu: ESC
 - Toggle fullscreen: F11
 
@@ -29,7 +29,7 @@ Made for [Open Jam 2020](https://itch.io/jam/open-jam-2020) (Theme: Airborne)
 - Thrust: A (Only needed if using directional pad)
 - Boost: B, L1, L2
 - Shoot: X, R1, R2
-- Tractor beam: Y
+- Tractor beam/Liftoff: Y
 - Menu: Start
 - Toggle fullscreen: Select
 

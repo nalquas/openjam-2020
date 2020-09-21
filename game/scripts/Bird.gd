@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (float) var free_fly_speed = 125.0
+export (float) var free_fly_speed = 175.0
 
 export (AudioStream) var bird_dies
 export (AudioStream) var bird_hit

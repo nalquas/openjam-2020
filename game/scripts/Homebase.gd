@@ -19,6 +19,10 @@ func _on_Area_Hangar_body_entered(body):
 	if body.is_in_group("Player"):
 		set_camera(true)
 		body.set_camera(false)
+		var landing_position = $LandingPosition1.global_position
+		if randf() < 0.5:
+			landing_position = $LandingPosition2.global_position
+		body.land(landing_position)
 
 func _on_Area_Hangar_body_exited(body):
 	# Handle collision with physics body
