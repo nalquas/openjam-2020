@@ -9,15 +9,16 @@ var oxygen = 50
 var paused = false
 var elapsed = 0.0
 func _physics_process(delta):
-	elapsed = elapsed + delta
-	if elapsed>60/spawns_p_min:
-		print(elapsed)
-		elapsed = 0.0
-		print(elapsed)
-		spawns_p_min += 0.1/spawns_p_min
-		var nb = bird.instance()
-		nb.position=Vector2(0,1000+100*randf()).rotated(PI*2*randf())
-		self.add_child(nb)
+	if not paused:
+		elapsed = elapsed + delta
+		if elapsed>60/spawns_p_min:
+			print(elapsed)
+			elapsed = 0.0
+			print(elapsed)
+			spawns_p_min += 0.1/spawns_p_min
+			var nb = bird.instance()
+			nb.position=Vector2(0,2000+200*randf()).rotated(PI*2*randf())
+			self.add_child(nb)
 func set_camera(state):
 	$Camera2D.current = state
 
