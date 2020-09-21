@@ -1,4 +1,4 @@
-tool
+#tool
 extends Node2D
 export (PackedScene) var chunk_scene
 export (Vector2) var player_coord

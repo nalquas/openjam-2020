@@ -51,3 +51,4 @@ Remaining Metal: 42"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="item_activated" from="UpgradeList" to="." method="_on_UpgradeList_item_activated"]

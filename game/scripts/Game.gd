@@ -23,6 +23,9 @@ func _process(_delta):
 	$GameOverlay.set_fuel((float($Player.fuel) / float($Player.fuel_max)) * 100.0)
 	$GameOverlay.set_ammo((float($Player.ammo) / float($Player.ammo_max)) * 100.0)
 	$GameOverlay.set_oxygen((float($Player.oxygen) / float($Player.oxygen_max)) * 100.0)
+	
+	# Update upgrade menu
+	$UpgradeMenu.refresh($Homebase.oxygen, $Homebase.metal)
 
 func _on_GameMenu_menu():
 	emit_signal("menu")

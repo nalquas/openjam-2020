@@ -1,5 +1,8 @@
 extends Node2D
 
+export (int) var hp = 250
+export (int) var hp_max = 250
+
 var metal = 0
 var oxygen = 50
 var paused = false
