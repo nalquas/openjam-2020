@@ -1,14 +1,14 @@
 #tool
 extends Node2D
+
 export (PackedScene) var metal_scene
 export (PackedScene) var oxy_scene
+
 export (int) var distance = 1
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var playerpos = Vector2(0,0)
 var chunks = {}
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	for x in range(-distance,1+distance):
 		for y in range(-distance,1+distance):
@@ -24,7 +24,7 @@ func _ready():
 				chunks[x][y]=[met,oxy]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _process(delta):
 	#print(get_child_count())
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
@@ -54,6 +54,7 @@ func _physics_process(delta):
 						self.add_child(chunks[x][y][0])
 						chunks[x][y][0].spawn_birds()
 						self.add_child(chunks[x][y][1])
+
 func playerpos():
 	var players = get_tree().get_nodes_in_group("Player")
 	var player_position = Vector2(0,0)

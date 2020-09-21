@@ -24,7 +24,7 @@ func _ready():
 	set_armor_level(1)
 	set_repair_level(1)
 
-func _physics_process(delta):
+func _process(delta):
 	oxygen -= delta * 0.5/oxygen_generator_level
 	if not paused:
 		elapsed = elapsed + delta

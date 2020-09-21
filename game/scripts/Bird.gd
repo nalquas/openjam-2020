@@ -96,9 +96,3 @@ func instakill():
 func toggle_pause():
 	paused = not paused
 	$AnimatedSprite.playing = not paused
-
-func _on_SuicideArea_body_entered(body):
-	if body.is_in_group("Player"):
-		body.deal_damage(15)
-		get_main().play_audio(bird_dies)
-		queue_free()
