@@ -52,7 +52,7 @@ text = "The controls:
 Turn the ship by using a and d or pointing the mouse in the right direction.
 Press w or left mouse button for activating thrust.
 Press shift or middle mouse button to use afterburner.
-Press f to attrackt metal and leave the homebase."
+Press f to attract metal and leave the homebase."
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
