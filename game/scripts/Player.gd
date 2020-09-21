@@ -11,10 +11,11 @@ export (int) var hp = 100
 export (int) var hp_max = 100
 export (float) var fuel = 100.0
 export (float) var fuel_max = 100.0
+export (float) var fuel_rate = 0.5
 export (int) var oxygen = 0
 export (int) var oxygen_max = 10
-export (int) var ammo = 100
-export (int) var ammo_max = 100
+export (int) var ammo = 40
+export (int) var ammo_max = 40
 var speed = Vector2(0.0, 0.0)
 
 var mouse_input_disabled = true
@@ -82,7 +83,7 @@ func _physics_process(delta):
 	
 	# Finish movement
 	rotation = direction.angle()
-	if thrust > 0:
+	if thrust > 0 and fuel > 0:
 		# Thrusting
 		speed += direction.normalized() * thrust * acceleration
 		if speed.length() > max_speed * thrust:
@@ -94,8 +95,14 @@ func _physics_process(delta):
 			speed = Vector2(0.0, 0.0)
 	move_and_slide(speed)
 	
+	# Deduct fuel spent
+	if thrust == 1.0:
+		fuel -= fuel_rate * delta
+	elif thrust == 1.75:
+		fuel -= fuel_rate * 2.25*delta
+	
 	# Shooting
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and ammo > 0:
 		# Play shooting sound
 		get_main().play_audio(audio_shoot)
 		
@@ -109,6 +116,9 @@ func _physics_process(delta):
 			new_bullet.position = $RightBarrel.global_position
 		use_left_barrel = !use_left_barrel
 		get_parent().add_child(new_bullet)
+		
+		# Deduct ammo
+		ammo -= 1
 	
 	# activating tractorbeam
 	if Input.is_action_just_pressed("tractor_beam"):
