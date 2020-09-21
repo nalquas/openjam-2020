@@ -41,20 +41,6 @@ func _input(event):
 	elif event is InputEventJoypadMotion:
 		mouse_input_disabled = true
 		joy_input_disabled = false
-	
-	#activating tractorbeam
-	if Input.is_action_just_pressed("tractor_beam"):
-		if tracked_metal != null:
-			tracked_metal.follow()
-		var overlapping_bodies = $TractorRadius.get_overlapping_bodies()
-		var distance = 10000
-		for x in overlapping_bodies:
-			if x.is_in_group("Metal"):
-				if x.position.distance_to(position) < distance:
-					distance = x.position.distance_to(position)
-					tracked_metal = x
-		if tracked_metal != null:
-			tracked_metal.follow()
 
 func _physics_process(delta):
 	# Thrust
@@ -123,6 +109,20 @@ func _physics_process(delta):
 			new_bullet.position = $RightBarrel.global_position
 		use_left_barrel = !use_left_barrel
 		get_parent().add_child(new_bullet)
+	
+	# activating tractorbeam
+	if Input.is_action_just_pressed("tractor_beam"):
+		if tracked_metal != null:
+			tracked_metal.follow()
+		var overlapping_bodies = $TractorRadius.get_overlapping_bodies()
+		var distance = 10000
+		for x in overlapping_bodies:
+			if x.is_in_group("Metal"):
+				if x.position.distance_to(position) < distance:
+					distance = x.position.distance_to(position)
+					tracked_metal = x
+		if tracked_metal != null:
+			tracked_metal.follow()
 
 func set_camera(state):
 	$Camera2D.current = state
