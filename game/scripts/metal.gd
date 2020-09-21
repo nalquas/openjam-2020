@@ -4,7 +4,7 @@ export (PackedScene) var enemy
 var following = false
 var collected = false
 var time_since_collected = 0
-
+var moved = false
 export (AudioStream) var metal_audio
 export (AudioStream) var metal_collected
 
@@ -37,6 +37,7 @@ func get_main():
 		return mains[0]
 
 func follow():
+	moved = true
 	following = !following
 	get_main().play_audio(metal_audio)
 
