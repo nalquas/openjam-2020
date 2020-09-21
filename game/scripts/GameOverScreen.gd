@@ -7,7 +7,8 @@ func _ready():
 
 func set_visible(state):
 	$Title.visible = state
-	$ButtonBack.visible = state 
+	$ButtonBack.visible = state
+	$Reason.visible = state
 
 
 func get_main():
