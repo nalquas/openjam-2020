@@ -14,6 +14,8 @@ func _process(_delta):
 			stri="You are out of lives" 
 		if($Homebase.hp<=0):
 			stri="Homebase out of lives"
+		if($Homebase.oxygen<=0):
+			stri="Your people suffocated"
 		if($Player.fuel<=0):
 			stri="You are out of fuel"
 		get_parent().game_over(stri)
