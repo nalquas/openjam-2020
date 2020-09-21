@@ -2,8 +2,15 @@ extends Node
 
 export (PackedScene) var scene_game
 export (PackedScene) var scene_audioplayer
+export (AudioStream) var main_track
 
 func _ready():
+	var mp = scene_audioplayer.instance()
+	mp.setAudio(main_track, -5)
+	mp.loop = true
+	mp.title = ""
+	add_child(mp)
+	
 	$MainMenu.set_visible(true)
 
 func _process(_delta):

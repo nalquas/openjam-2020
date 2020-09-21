@@ -10,7 +10,7 @@
 [ext_resource path="res://resources/sprites/Playership/Engine1.png" type="Texture" id=8]
 [ext_resource path="res://resources/sprites/Playership/Flames.png" type="Texture" id=9]
 [ext_resource path="res://resources/sprites/128px_circle.png" type="Texture" id=10]
-[ext_resource path="res://audio/test.wav" type="AudioStream" id=11]
+[ext_resource path="res://audio/Shot.wav" type="AudioStream" id=11]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -0.834848, 0.0, 0, 0 ]

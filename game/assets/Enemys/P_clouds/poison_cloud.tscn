@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Enemys/P_clouds/new_shadermaterial.tres" type="Material" id=1]
 [ext_resource path="res://scripts/p_clouds/poison_cloud.gd" type="Script" id=2]
+[ext_resource path="res://audio/Explosion.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -17,6 +18,7 @@ noise = SubResource( 2 )
 ]]
 script = ExtResource( 2 )
 cld_seed = 2
+explosion_sound = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
