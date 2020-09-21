@@ -1,17 +1,36 @@
 extends KinematicBody2D
-var home = null
 
-var dir = Vector2(1,0)
-export (Vector2) var  homecoord
+var home = null # Configured by Bird spawner (metal)
 
-func _process(delta):
+# Variables necessary for circling around the metal
+var start_offset = 1.0
+var time_offset = 0.0
+var prev_position = position
+
+var stay_home = true
+
+func _ready():
+	# Use spawned position as start position
+	start_offset = (position - home.global_position).angle()
+
+func _physics_process(delta):
+	# Despawn if home is gone
+	# TODO: If the home is metal and is gone because it has been collected,
+	# redirect the birds at the player's homebase instead.
 	if home == null:
 		queue_free()
-	#elif home.is_inside_tree():
-	#	var rel_pos = home.global_position - self.global_position 
-	#	var mov = Vector2(0,0)
-	#	if rel_pos.x*rel_pos.y>=0:
-	#		mov = Vector2(rel_pos.y,-rel_pos.x).normalized()
-	#	else:
-	#		mov = Vector2(-rel_pos.y,rel_pos.x).normalized()
-	#	move_and_slide(mov*100)
+	else:
+		if stay_home:
+			# Handle movement
+			# Circle around home
+			time_offset += delta
+			position = home.global_position + Vector2(
+				192.0 * cos(start_offset + 2*PI + time_offset),
+				192.0 * sin(start_offset + 2*PI + time_offset)
+			)
+			
+			# Handle rotation
+			rotation = (position - prev_position).angle()
+			prev_position = position
+		else:
+			pass

@@ -18,7 +18,7 @@ func _ready():
 		enemy_instance.position = position + Vector2(0.0, 300.0).rotated(((2.0*PI)/float(enemy_count))*float(enemy_nr))
 		get_parent().add_child(enemy_instance)
 
-func _process(delta):
+func _physics_process(delta):
 	if collected:
 		move_and_slide(get_tree().get_nodes_in_group("Homebase")[0].position - position)
 		time_since_collected += delta
