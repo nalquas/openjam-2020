@@ -12,7 +12,7 @@ Made for [Open Jam 2020](https://itch.io/jam/open-jam-2020) (Theme: Airborne)
 - Music: [Bosca Ceoil](https://boscaceoil.net/)
 
 ## How to play
-- TBD
+- You control a Base and a Jet, collecting resources to buy upgrades and ensuring the survival of your crew. All while avoiding poisonous clouds with your ship and defending yourself against mutated airborne penguins.
 
 ## Controls
 ### Keyboard

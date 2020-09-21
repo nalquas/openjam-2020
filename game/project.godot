@@ -19,7 +19,7 @@ config/name="Flight for Humankind"
 config/description="The remaining survivors of the climate catastrophe depend on you!
 Ensure the survival of your airship's crew by ensuring a steady oxygen supply and defending it against mutated airborne penguins."
 run/main_scene="res://scenes/game/Splashscreen.tscn"
-config/icon="res://resources/sprites/Logo5.png"
+config/icon="res://Icon.png"
 
 [display]
 
