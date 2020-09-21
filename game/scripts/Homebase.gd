@@ -25,6 +25,7 @@ func _ready():
 	set_repair_level(1)
 
 func _physics_process(delta):
+	oxygen -= delta * 0.5/oxygen_generator_level
 	if not paused:
 		elapsed = elapsed + delta
 		if elapsed>60/spawns_p_min:

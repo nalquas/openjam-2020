@@ -27,7 +27,7 @@ func set_visible(state):
 func refresh(oxygen, metal):
 	self.metal = metal
 	self.oxygen = oxygen
-	$StatusLabel.text = "Remaining Oxygen: " + String(oxygen) + "\nRemaining Metal: " + String(metal)
+	$StatusLabel.text = "Remaining Oxygen: " + String(int(oxygen)) + "\nRemaining Metal: " + String(metal)
 
 func get_main():
 	# Get Main node
