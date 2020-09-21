@@ -26,7 +26,7 @@ func _physics_process(delta):
 		time_since_collected += delta
 		$Sprite.scale -= Vector2(0.004,0.004)
 		if time_since_collected > 3:
-			get_tree().get_nodes_in_group("Homebase")[0].metal += 10
+			get_tree().get_nodes_in_group("Homebase")[0].metal += 20
 			get_main().play_audio(metal_collected)
 			queue_free()
 	elif following:
