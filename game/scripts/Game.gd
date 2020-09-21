@@ -9,7 +9,8 @@ func _ready():
 func _process(_delta):
 	# Handle menu toggle
 	if $Player.hp<=0 or $Homebase.oxygen<=0 or $Homebase.hp<=0 or $Player.fuel<=0:
-		get_parent().game_over()
+		var stri = ($Player.hp<=0)*"You are out of lives" + ($Homebase.hp<=0)*"Homebase out of live" + ($Player.fuel<=0)*"You are out of fuel"
+		get_parent().game_over(stri)
 		self.queue_free()
 	$p_cloud_map.player_coord = $Player.position
 	if Input.is_action_just_pressed("menu") and not $Player.landed:
