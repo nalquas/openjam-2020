@@ -60,15 +60,27 @@ func _on_UpgradeList_item_activated(index):
 			pass
 		6:
 			if ship_speed_level < 3:
-				# Ship  - Speed
-				ship_speed_level += 1
-				player.set_engine_level(ship_speed_level)
+				var dewit = false
 				
-				# Don't allow upgrades over level 3
-				if ship_speed_level >= 3:
-					$UpgradeList.set_item_disabled(6, true)
-					$UpgradeList.set_item_selectable(6, false)
-					$UpgradeList.unselect(6)
+				if ship_speed_level == 1 and metal >= 30:
+					metal -= 30
+					dewit = true
+				elif ship_speed_level == 2 and metal >= 50:
+					metal -= 50
+					dewit = true
+				
+				if dewit:
+					# Ship  - Speed
+					ship_speed_level += 1
+					player.set_engine_level(ship_speed_level)
+					
+					if ship_speed_level == 2:
+						$UpgradeList.set_item_text(6, "Ship  - Speed 3 (50 Metal)")
+					elif ship_speed_level >= 3:
+						# Don't allow upgrades over level 3
+						$UpgradeList.set_item_disabled(6, true)
+						$UpgradeList.set_item_selectable(6, false)
+						$UpgradeList.unselect(6)
 		7:
 			# Ship  - Oxygen Capacity
 			pass
