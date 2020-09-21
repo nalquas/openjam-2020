@@ -31,7 +31,7 @@ func play_audio(audio, loop=false, volume_db=0, title="none"):
 
 func play_click():
 	var ap = scene_audioplayer.instance()
-	ap.setAudio(click_sound)
+	ap.setAudio(click_sound, 5)
 	ap.loop = false
 	ap.title = ""
 	add_child(ap)
