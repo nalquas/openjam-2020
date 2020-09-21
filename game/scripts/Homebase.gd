@@ -26,7 +26,6 @@ func _on_Area_Outer_body_entered(body):
 	# Handle collision with physics body
 	if body.is_in_group("Metal"):
 		body.collected()
-		metal += 1
 
 func _on_Area_Outer_body_exited(body):
 	# Handle collision with physics body

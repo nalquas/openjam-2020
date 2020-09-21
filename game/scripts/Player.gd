@@ -12,8 +12,8 @@ export (float) var acceleration = 21.0
 export (float) var brake_factor = 0.98
 export (int) var hp = 100
 export (int) var hp_max = 100
-export (float) var fuel = 100.0
-export (float) var fuel_max = 100.0
+export (float) var fuel = 50.0
+export (float) var fuel_max = 50.0
 export (float) var fuel_rate = 0.5
 export (int) var oxygen = 0
 export (int) var oxygen_max = 10
@@ -32,6 +32,13 @@ var landing_position = Vector2(0, 0)
 var lifting_off = false
 var paused = false
 var tracked_metal
+
+var engine_level = 1
+var fueltank_level = 1
+
+func _ready():
+	set_engine_level(1)
+	set_fueltank_level(1)
 
 func get_main():
 	# Get Main node
@@ -92,6 +99,18 @@ func _physics_process(delta):
 			# Finish movement
 			rotation = direction.angle()
 			if thrust > 0 and fuel > 0:
+				# Deduct fuel spent
+				if thrust == 1.0:
+					fuel -= fuel_rate * delta * (1.0 / fueltank_level)
+				elif thrust == 1.75:
+					fuel -= fuel_rate * 2.25*delta * (1.0 / fueltank_level)
+				
+				# Multiply thrust based on engine_level
+				if engine_level == 2:
+					thrust = thrust * 1.25
+				if engine_level == 3:
+					thrust = thrust * 1.5
+				
 				# Thrusting
 				speed += direction.normalized() * thrust * acceleration
 				if speed.length() > max_speed * thrust:
@@ -102,12 +121,6 @@ func _physics_process(delta):
 				if speed.length() < 0.01:
 					speed = Vector2(0.0, 0.0)
 			move_and_slide(speed)
-			
-			# Deduct fuel spent
-			if thrust == 1.0:
-				fuel -= fuel_rate * delta
-			elif thrust == 1.75:
-				fuel -= fuel_rate * 2.25*delta
 			
 			# Shooting
 			if Input.is_action_just_pressed("shoot") and ammo > 0:
@@ -214,9 +227,32 @@ func toggle_pause():
 		$CentralExhaust.speed_scale=2.5
 		$LeftExhaust.speed_scale = 2.5
 		$RightExhaust.speed_scale = 2.5
+
 func liftoff():
 	emit_signal("liftoff")
 	lifting_off = true
 	$LeftExhaust.emitting = true
 	$CentralExhaust.emitting = true
 	$RightExhaust.emitting = true
+
+func set_engine_level(level):
+	engine_level = level
+	$Base/Engine1.visible = false
+	$Base/Engine2.visible = false
+	$Base/Engine3.visible = false
+	$CentralExhaust.visible = false
+	if level == 1:
+		$Base/Engine1.visible = true
+	if level == 2:
+		$Base/Engine2.visible = true
+		$CentralExhaust.visible = true
+	if level == 3:
+		$Base/Engine3.visible = true
+		$CentralExhaust.visible = true
+
+func set_fueltank_level(level):
+	fueltank_level = level
+	if level == 1:
+		$Base/Fueltank1.visible = false
+	else:
+		$Base/Fueltank1.visible = true

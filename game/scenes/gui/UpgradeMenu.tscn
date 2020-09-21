@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/sprites/UI/left.png" type="Texture" id=1]
 [ext_resource path="res://resources/fonts/font_16x.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/UpgradeMenu.gd" type="Script" id=3]
+[ext_resource path="res://audio/Not_enough_metal.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/Upgrade_complete.wav" type="AudioStream" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="UpgradeMenu" type="CanvasLayer"]
 script = ExtResource( 3 )
+audio_success = ExtResource( 5 )
+audio_not_enough_metal = ExtResource( 4 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 320.0
@@ -35,7 +39,7 @@ margin_right = 307.0
 margin_bottom = 707.0
 custom_styles/bg = SubResource( 1 )
 custom_fonts/font = ExtResource( 2 )
-items = [ "Base - Oxygen Capacity", null, false, "Base - Oxygen Generator", null, false, "Base - Additional Turret", null, false, "Base - Turret Strength", null, false, "Base - Armor", null, false, "Base - Repair Crew", null, false, "Ship  - Speed", null, false, "Ship  - Oxygen Capacity", null, false, "Ship  - Fuel Tank Size", null, false, "Ship  - Weapon Strength", null, false ]
+items = [ "Base - Oxygen Capacity", null, false, "Base - Oxygen Generator", null, false, "Base - Additional Turret", null, false, "Base - Turret Strength", null, false, "Base - Armor", null, false, "Base - Repair Crew", null, false, "Ship  - Speed 2 (30 Metal)", null, false, "Ship  - Oxygen Capacity", null, false, "Ship  - Fuel Tank Size (30 Metal)", null, false, "Ship  - Weapon Strength", null, false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
