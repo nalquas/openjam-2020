@@ -8,7 +8,3 @@
 script = ExtResource( 1 )
 metal_scene = ExtResource( 3 )
 oxy_scene = ExtResource( 2 )
-[connection signal="body_entered" from="OxygenCloud" to="OxygenCloud" method="_on_OxygenCloud_body_entered"]
-[connection signal="body_entered" from="OxygenCloud2" to="OxygenCloud2" method="_on_OxygenCloud_body_entered"]
-[connection signal="body_entered" from="OxygenCloud3" to="OxygenCloud3" method="_on_OxygenCloud_body_entered"]
-[connection signal="body_entered" from="OxygenCloud4" to="OxygenCloud4" method="_on_OxygenCloud_body_entered"]
