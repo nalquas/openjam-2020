@@ -37,4 +37,21 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Reason" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -62.063
+margin_right = 20.0
+margin_bottom = -43.063
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 2 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]

@@ -40,9 +40,11 @@ func play_click():
 	ap.title = ""
 	add_child(ap)
 
-func game_over():
+func game_over(reason):
 	$GameOverScreen.set_visible(true)
 	$MainMenu/Background.visible = true
+	$GameOverScreen/Reason.text = reason
+	
 
 func _on_MainMenu_start():
 	$MainMenu.set_visible(false)
