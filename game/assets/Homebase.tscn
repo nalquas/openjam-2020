@@ -233,6 +233,22 @@ anims/idle = SubResource( 3 )
 
 [node name="Turret" parent="." instance=ExtResource( 19 )]
 position = Vector2( -118.995, -58.7219 )
+active = true
+
+[node name="Turret2" parent="." instance=ExtResource( 19 )]
+position = Vector2( -9.6186, -58.7219 )
+
+[node name="Turret3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 89.2697, -58.7219 )
+
+[node name="Turret4" parent="." instance=ExtResource( 19 )]
+position = Vector2( -118.995, 67.1359 )
+
+[node name="Turret5" parent="." instance=ExtResource( 19 )]
+position = Vector2( -9.6186, 67.1359 )
+
+[node name="Turret6" parent="." instance=ExtResource( 19 )]
+position = Vector2( 89.2697, 65.6376 )
 
 [node name="LandingPosition1" type="Node2D" parent="."]
 position = Vector2( -245, -24 )

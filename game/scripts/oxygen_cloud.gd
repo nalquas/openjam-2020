@@ -14,5 +14,5 @@ func seed_changer(inp):
 
 func _on_OxygenCloud_body_entered(body):
 	if body.is_in_group("Player"):
-		body.add_oxygen()
-		queue_free()
+		if body.add_oxygen():
+			queue_free()

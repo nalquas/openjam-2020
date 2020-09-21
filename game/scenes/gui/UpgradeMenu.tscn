@@ -39,7 +39,7 @@ margin_right = 307.0
 margin_bottom = 707.0
 custom_styles/bg = SubResource( 1 )
 custom_fonts/font = ExtResource( 2 )
-items = [ "Base - Oxygen Capacity", null, false, "Base - Oxygen Generator", null, false, "Base - Additional Turret", null, false, "Base - Turret Strength", null, false, "Base - Armor", null, false, "Base - Repair Crew", null, false, "Ship  - Speed 2 (30 Metal)", null, false, "Ship  - Oxygen Capacity", null, false, "Ship  - Fuel Tank Size (30 Metal)", null, false, "Ship  - Weapon Strength", null, false ]
+items = [ "Base - Oxygen Capacity 2 (50 Metal)", null, false, "Base - Oxygen Generator 2 (30 Metal)", null, false, "Base - Turret Count 2 (40 Metal)", null, false, "Base - Armor 2 (50 Metal)", null, false, "Base - Repair Crew (60 Metal)", null, false, "Ship  - Speed 2 (30 Metal)", null, false, "Ship  - Oxygen Capacity (30 Metal)", null, false, "Ship  - Fuel Tank Size (30 Metal)", null, false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
