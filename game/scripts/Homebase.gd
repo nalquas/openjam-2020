@@ -1,6 +1,7 @@
 extends Node2D
 
 var metal = 0
+var oxygen = 50
 
 func set_camera(state):
 	$Camera2D.current = state
@@ -23,6 +24,7 @@ func _on_Area_Hangar_body_entered(body):
 		if randf() < 0.5:
 			landing_position = $LandingPosition2.global_position
 		body.land(landing_position)
+		oxygen += body.oxygen
 
 func _on_Area_Hangar_body_exited(body):
 	# Handle collision with physics body

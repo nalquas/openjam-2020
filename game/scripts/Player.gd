@@ -158,9 +158,11 @@ func _physics_process(delta):
 				# Landed
 				
 				# Refill
-				if ammo < ammo_max or fuel < fuel_max:
+				if ammo < ammo_max or fuel < fuel_max or hp < hp_max:
 					ammo = ammo_max
 					fuel = fuel_max
+					hp = hp_max
+					oxygen = 0
 				
 				# Check for liftoff request
 				if Input.is_action_just_pressed("tractor_beam"):
