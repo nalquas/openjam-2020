@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (float) var free_fly_speed = 125.0
+export (float) var free_fly_speed = 175.0
 
 var home = null # Configured by Bird spawner (metal)
 
