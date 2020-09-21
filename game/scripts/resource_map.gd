@@ -34,8 +34,11 @@ func _physics_process(delta):
 			for y in range(-3+playerpos.y,4+playerpos.y):
 				if abs(x-playerpos.x)==3 or abs(y-playerpos.y)==3:
 					if chunks.has(x) and chunks[x].has(y):
-						self.remove_child(chunks[x][y][0])
-						self.remove_child(chunks[x][y][1])
+						# Remove children, if they are children
+						if self.is_a_parent_of(chunks[x][y][0]):
+							self.remove_child(chunks[x][y][0])
+						if self.is_a_parent_of(chunks[x][y][1]):
+							self.remove_child(chunks[x][y][1])
 
 				else:
 					if not chunks.has(x):
@@ -48,7 +51,7 @@ func _physics_process(delta):
 						self.add_child(oxy)
 						self.add_child(met)
 						chunks[x][y]=[met,oxy]
-					elif not chunks[x][y][0].is_inside_tree():
+					elif (chunks[x][y][0] != null) and (not chunks[x][y][0].is_inside_tree()):
 						self.add_child(chunks[x][y][0])
 						self.add_child(chunks[x][y][1])
 func playerpos():
