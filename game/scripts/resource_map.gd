@@ -25,10 +25,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print(get_child_count())
+	#print(get_child_count())
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
-		print("Update")
+		#print("Update")
 		playerpos = new_pos
 		for x in range(-3+playerpos.x,4+playerpos.x):
 			for y in range(-3+playerpos.y,4+playerpos.y):

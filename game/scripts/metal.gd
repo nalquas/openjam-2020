@@ -8,18 +8,17 @@ var time_since_collected = 0
 export (AudioStream) var metal_audio
 export (AudioStream) var metal_collected
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var enemys = randi()%3+2
-	for enemy_nr in range(enemys):
-		var en = enemy.instance()
-		en.home=self
-		en.position = self.position + Vector2(0,300).rotated(2*PI/enemys*enemy_nr)
-		self.get_parent().add_child(en)
+	# Spawn birds
+	var enemy_count = randi()%3 + 2 # 2-4 birds
+	for enemy_nr in range(enemy_count):
+		# Instance birds and position them around this metal
+		var enemy_instance = enemy.instance()
+		enemy_instance.home = self
+		enemy_instance.position = position + Vector2(0.0, 300.0).rotated(((2.0*PI)/float(enemy_count))*float(enemy_nr))
+		get_parent().add_child(enemy_instance)
 
-
-
-func _process(delta):
+func _physics_process(delta):
 	if collected:
 		move_and_slide(get_tree().get_nodes_in_group("Homebase")[0].position - position)
 		time_since_collected += delta
