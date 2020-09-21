@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/map_layer/map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Cloud_layer/Clouds.tscn" type="PackedScene" id=2]
@@ -9,9 +9,12 @@
 [ext_resource path="res://scenes/gui/GameOverlay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Enemys/P_clouds/p_cloud_map.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/resources/resource_map.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/gui/UpgradeMenu.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node"]
 script = ExtResource( 6 )
+
+[node name="UpgradeMenu" parent="." instance=ExtResource( 10 )]
 
 [node name="GameOverlay" parent="." instance=ExtResource( 7 )]
 
@@ -41,11 +44,10 @@ cldseed = 2
 
 [node name="p_cloud_map" parent="." instance=ExtResource( 8 )]
 distance = 2
+player_coord = Vector2( 0, 0 )
 
 [node name="resourcemap" parent="." instance=ExtResource( 9 )]
 distance = 2
 [connection signal="menu" from="GameMenu" to="." method="_on_GameMenu_menu"]
-[connection signal="body_entered" from="resourcemap/OxygenCloud" to="resourcemap/OxygenCloud" method="_on_OxygenCloud_body_entered"]
-[connection signal="body_entered" from="resourcemap/OxygenCloud2" to="resourcemap/OxygenCloud2" method="_on_OxygenCloud_body_entered"]
-[connection signal="body_entered" from="resourcemap/OxygenCloud3" to="resourcemap/OxygenCloud3" method="_on_OxygenCloud_body_entered"]
-[connection signal="body_entered" from="resourcemap/OxygenCloud4" to="resourcemap/OxygenCloud4" method="_on_OxygenCloud_body_entered"]
+[connection signal="landing" from="Player" to="." method="_on_Player_landing"]
+[connection signal="liftoff" from="Player" to="." method="_on_Player_liftoff"]

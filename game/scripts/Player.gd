@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal landing
+signal liftoff
+
 export (PackedScene) var scene_bullet
 export (AudioStream) var audio_shoot
 
@@ -158,9 +161,11 @@ func _physics_process(delta):
 				# Landed
 				
 				# Refill
-				if ammo < ammo_max or fuel < fuel_max:
+				if ammo < ammo_max or fuel < fuel_max or hp < hp_max:
 					ammo = ammo_max
 					fuel = fuel_max
+					hp = hp_max
+					oxygen = 0
 				
 				# Check for liftoff request
 				if Input.is_action_just_pressed("tractor_beam"):
@@ -189,6 +194,7 @@ func add_oxygen():
 	return false
 
 func land(landing_pos):
+	emit_signal("landing")
 	landing_position = landing_pos
 	landed = true
 	speed = Vector2(0.0, 0.0)
@@ -198,6 +204,7 @@ func land(landing_pos):
 	$RightExhaust.emitting = false
 
 func liftoff():
+	emit_signal("liftoff")
 	lifting_off = true
 	$LeftExhaust.emitting = true
 	$CentralExhaust.emitting = true

@@ -4,6 +4,7 @@ signal menu
 
 func _ready():
 	connect("menu", get_parent(), "_on_Game_menu")
+	$UpgradeMenu.set_visible(false)
 
 func _process(_delta):
 	# Handle menu toggle
@@ -24,3 +25,9 @@ func _process(_delta):
 func _on_GameMenu_menu():
 	emit_signal("menu")
 	queue_free()
+
+func _on_Player_landing():
+	$UpgradeMenu.set_visible(true)
+
+func _on_Player_liftoff():
+	$UpgradeMenu.set_visible(false)
