@@ -129,6 +129,7 @@ tracks/7/keys = {
 
 [node name="Homebase" type="Node2D" groups=[
 "Homebase",
+"pausable",
 ]]
 script = ExtResource( 2 )
 
@@ -152,23 +153,22 @@ texture = ExtResource( 4 )
 
 [node name="Engine_TL" type="Sprite" parent="Base"]
 position = Vector2( -187.299, -113.405 )
-rotation = 7.29762
+rotation = 6.28064
 texture = ExtResource( 8 )
 
 [node name="Engine_BL" type="Sprite" parent="Base"]
 position = Vector2( -187.774, 120.614 )
-rotation = 5.28755
+rotation = 6.29205
 texture = ExtResource( 8 )
 flip_h = true
 
 [node name="Engine_BR" type="Sprite" parent="Base"]
 position = Vector2( 159.542, 121.981 )
-rotation = 5.73558
+rotation = 4.72626
 texture = ExtResource( 8 )
 
 [node name="Engine_TR" type="Sprite" parent="Base"]
 position = Vector2( 156.223, -113.9 )
-rotation = -1.00841
 texture = ExtResource( 8 )
 flip_h = true
 

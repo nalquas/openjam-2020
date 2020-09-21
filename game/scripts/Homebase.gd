@@ -2,7 +2,7 @@ extends Node2D
 
 var metal = 0
 var oxygen = 50
-
+var paused = false
 func set_camera(state):
 	$Camera2D.current = state
 
@@ -31,3 +31,9 @@ func _on_Area_Hangar_body_exited(body):
 	if body.is_in_group("Player"):
 		set_camera(false)
 		body.set_camera(true)
+func toggle_pause():
+	paused = not paused
+	if paused:
+		$AnimationPlayer.stop(false)
+	else:
+		$AnimationPlayer.play()

@@ -16,6 +16,7 @@ height = 12.375
 
 [node name="Bullet" type="Area2D" groups=[
 "Bullet",
+"pausable",
 ]]
 script = ExtResource( 2 )
 
