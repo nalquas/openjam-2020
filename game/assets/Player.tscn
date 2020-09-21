@@ -137,4 +137,5 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDamageArea"]
 rotation = 1.5708
 shape = SubResource( 5 )
+[connection signal="area_entered" from="ShipDamageArea" to="." method="_on_ShipDamageArea_area_entered"]
 [connection signal="body_entered" from="ShipDamageArea" to="." method="_on_ShipDamageArea_body_entered"]

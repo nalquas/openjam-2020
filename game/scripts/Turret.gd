@@ -14,8 +14,8 @@ func _ready():
 	set_active(active)
 
 func _physics_process(delta):
-	time_since_last_shot += delta
 	if active:
+		time_since_last_shot += delta
 		if time_since_last_shot > 1:
 			time_since_last_shot = 0
 			var overlapping_bodies = $Bird_Detector.get_overlapping_bodies()

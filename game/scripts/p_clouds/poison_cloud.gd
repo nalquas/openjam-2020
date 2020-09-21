@@ -1,7 +1,6 @@
 extends Area2D
 
 export (int) var cld_seed = 0 setget seed_changer
-export (int) var dmg = 20
 
 export (AudioStream) var explosion_sound
 
@@ -15,11 +14,9 @@ func seed_changer(inp):
 			$Sprite.material.set_shader_param("cldseed",float(inp))
 			cld_seed=inp
 
-func _on_P_Cloud_body_entered(body):
-	if body.is_in_group("Player"):
-		get_main().play_audio(explosion_sound)
-		body.deal_damage(dmg)
-		queue_free()
+func instakill():
+	get_main().play_audio(explosion_sound)
+	queue_free()
 
 func get_main():
 	# Get Main node

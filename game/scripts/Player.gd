@@ -264,3 +264,12 @@ func _on_ShipDamageArea_body_entered(body):
 	if body.is_in_group("Bird"):
 		body.instakill()
 		deal_damage(15)
+
+
+func _on_ShipDamageArea_area_entered(area):
+	if area.is_in_group("Poison"):
+		area.instakill()
+		deal_damage(20)
+	elif area.is_in_group("Oxygen"):
+		if add_oxygen():
+			area.instakill()

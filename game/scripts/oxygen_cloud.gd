@@ -12,7 +12,5 @@ func seed_changer(inp):
 			$Sprite.material.set_shader_param("cldseed",float(inp))
 			cld_seed=inp
 
-func _on_OxygenCloud_body_entered(body):
-	if body.is_in_group("Player"):
-		if body.add_oxygen():
-			queue_free()
+func instakill():
+	queue_free()

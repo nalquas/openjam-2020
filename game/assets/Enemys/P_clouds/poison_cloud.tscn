@@ -27,4 +27,3 @@ shape = SubResource( 1 )
 material = ExtResource( 1 )
 scale = Vector2( 0.5, 0.9 )
 texture = SubResource( 3 )
-[connection signal="body_entered" from="." to="." method="_on_P_Cloud_body_entered"]
