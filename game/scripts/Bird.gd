@@ -3,6 +3,8 @@ extends KinematicBody2D
 export (float) var free_fly_speed = 125.0
 
 var home = null # Configured by Bird spawner (metal)
+var hits = 0
+export var hp = 3
 
 # Variables necessary for circling around the metal
 var start_offset = 1.0
@@ -68,3 +70,9 @@ func _on_AttackStartArea_body_entered(body):
 func _on_AttackEndArea_body_exited(body):
 	if body.is_in_group("Player"):
 		prefer_attacking_player = false
+
+func hit():
+	hits += 1
+	if hits >= hp:
+		queue_free()
+
