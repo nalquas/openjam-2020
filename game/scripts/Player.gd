@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal landing
+signal liftoff
+
 export (PackedScene) var scene_bullet
 export (AudioStream) var audio_shoot
 
@@ -191,6 +194,7 @@ func add_oxygen():
 	return false
 
 func land(landing_pos):
+	emit_signal("landing")
 	landing_position = landing_pos
 	landed = true
 	speed = Vector2(0.0, 0.0)
@@ -200,6 +204,7 @@ func land(landing_pos):
 	$RightExhaust.emitting = false
 
 func liftoff():
+	emit_signal("liftoff")
 	lifting_off = true
 	$LeftExhaust.emitting = true
 	$CentralExhaust.emitting = true
