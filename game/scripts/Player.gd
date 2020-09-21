@@ -34,9 +34,11 @@ var paused = false
 var tracked_metal
 
 var engine_level = 1
+var fueltank_level = 1
 
 func _ready():
 	set_engine_level(1)
+	set_fueltank_level(1)
 
 func get_main():
 	# Get Main node
@@ -99,9 +101,9 @@ func _physics_process(delta):
 			if thrust > 0 and fuel > 0:
 				# Deduct fuel spent
 				if thrust == 1.0:
-					fuel -= fuel_rate * delta
+					fuel -= fuel_rate * delta * (1.0 / fueltank_level)
 				elif thrust == 1.75:
-					fuel -= fuel_rate * 2.25*delta
+					fuel -= fuel_rate * 2.25*delta * (1.0 / fueltank_level)
 				
 				# Multiply thrust based on engine_level
 				if engine_level == 2:
@@ -247,3 +249,10 @@ func set_engine_level(level):
 	if level == 3:
 		$Base/Engine3.visible = true
 		$CentralExhaust.visible = true
+
+func set_fueltank_level(level):
+	fueltank_level = level
+	if level == 1:
+		$Base/Fueltank1.visible = false
+	else:
+		$Base/Fueltank1.visible = true

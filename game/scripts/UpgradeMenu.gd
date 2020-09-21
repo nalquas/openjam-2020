@@ -81,12 +81,20 @@ func _on_UpgradeList_item_activated(index):
 						$UpgradeList.set_item_disabled(6, true)
 						$UpgradeList.set_item_selectable(6, false)
 						$UpgradeList.unselect(6)
+						$UpgradeList.set_item_text(6, "Ship  - Speed (Maxed Out)")
 		7:
 			# Ship  - Oxygen Capacity
 			pass
 		8:
 			# Ship  - Fuel Tank Size
-			pass
+			if ship_fuel_level == 1 and metal >= 30:
+				metal -= 30
+				player.set_fueltank_level(ship_fuel_level)
+				
+				# Don't allow further upgrades
+				$UpgradeList.set_item_disabled(8, true)
+				$UpgradeList.set_item_selectable(8, false)
+				$UpgradeList.unselect(8)
 		9:
 			# Ship  - Weapon Strength
 			pass
