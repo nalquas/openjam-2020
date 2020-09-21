@@ -40,8 +40,6 @@ scale = Vector2( 20, 20 )
 motion_scale = Vector2( 0.7, 0.7 )
 cldseed = 2
 
-[node name="Homebase" parent="." instance=ExtResource( 4 )]
-
 [node name="p_cloud_map" parent="." instance=ExtResource( 8 )]
 distance = 2
 
