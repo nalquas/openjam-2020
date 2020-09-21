@@ -259,3 +259,8 @@ func set_fueltank_level(level):
 
 func set_oxygentank_level(level):
 	oxygen_tank_level = level
+
+func _on_ShipDamageArea_body_entered(body):
+	if body.is_in_group("Bird"):
+		body.instakill()
+		deal_damage(15)
