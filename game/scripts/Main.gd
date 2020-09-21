@@ -16,6 +16,7 @@ func _ready():
 	add_child(mp)
 	$CreditsPage.set_visible(false)
 	$MainMenu.set_visible(true)
+	$GameOverScreen.set_visible(false)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
@@ -37,6 +38,10 @@ func play_click():
 	ap.loop = false
 	ap.title = ""
 	add_child(ap)
+
+func game_over():
+	$GameOverScreen.set_visible(true)
+	$MainMenu/Background.visible = true
 
 func _on_MainMenu_start():
 	$MainMenu.set_visible(false)
@@ -75,4 +80,9 @@ func _on_MainMenu_openCredits():
 
 func _on_CreditsPage_back():
 	$CreditsPage.set_visible(false)
+	$MainMenu.set_visible(true)
+
+
+func _on_GameOverScreen_gameoverback():
+	$GameOverScreen.set_visible(false)
 	$MainMenu.set_visible(true)
