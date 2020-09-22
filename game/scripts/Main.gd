@@ -6,14 +6,10 @@ export (PackedScene) var scene_audioplayer
 export (AudioStream) var main_track
 export (AudioStream) var click_sound
 
-var mp
+var music_playing = true
 
 func _ready():
-	mp = scene_audioplayer.instance()
-	mp.setAudio(main_track, -7)
-	mp.loop = true
-	mp.title = ""
-	add_child(mp)
+	play_audio(main_track, true, -7, "music")
 	$CreditsPage.set_visible(false)
 	$MainMenu.set_visible(true)
 	$GameOverScreen.set_visible(false)
@@ -32,6 +28,11 @@ func play_audio(audio, loop=false, volume_db=0, title="none"):
 	ap.loop = loop
 	ap.title = title
 	add_child(ap)
+
+func stopAudio(title, fade=false):
+	for ap in get_tree().get_nodes_in_group("AudioPlayer"):
+		if ap.title == title:
+			ap.despawn(fade)
 
 func play_click():
 	var ap = scene_audioplayer.instance()
@@ -65,14 +66,12 @@ func _on_MainMenu_quit():
 
 
 func _on_MainMenu_toggleMusic():
-	if mp != null:
-		mp.despawn()
-	if mp == null:
-		mp = scene_audioplayer.instance()
-		mp.setAudio(main_track, -5)
-		mp.loop = true
-		mp.title = ""
-		add_child(mp)
+	if music_playing:
+		stopAudio("music", false)
+		music_playing = false
+	else:
+		play_audio(main_track, true, -7, "music")
+		music_playing = true
 
 
 func _on_MainMenu_openCredits():
