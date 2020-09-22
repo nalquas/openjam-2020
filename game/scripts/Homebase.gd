@@ -25,7 +25,7 @@ func _ready():
 	set_repair_level(1)
 
 func _process(delta):
-	oxygen -= delta * 0.5/oxygen_generator_level
+	oxygen -= delta * 0.25/oxygen_generator_level
 	if not paused:
 		elapsed = elapsed + delta
 		if elapsed>60/spawns_p_min:
