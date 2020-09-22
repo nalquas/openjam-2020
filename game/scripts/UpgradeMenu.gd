@@ -272,3 +272,6 @@ func _on_UpgradeList_item_activated(index):
 					$UpgradeList.set_item_text(index, "Ship  - Fuel Tank Size (Maxed Out)")
 				else:
 					play_not_enough()
+	
+	# Reverse refresh (Update metal changes in homebase)
+	homebase.metal = metal
