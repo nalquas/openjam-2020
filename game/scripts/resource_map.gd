@@ -35,9 +35,9 @@ func _physics_process(delta):
 				if abs(x-playerpos.x)==distance+1 or abs(y-playerpos.y)==distance+1:
 					if chunks.has(x) and chunks[x].has(y):
 						# Remove children, if they are children
-						if self.is_a_parent_of(chunks[x][y][0]) and not chunks[x][y][0].moved:
+						if chunks[x][y][0]!=null and self.is_a_parent_of(chunks[x][y][0]) and not chunks[x][y][0].moved:
 							self.remove_child(chunks[x][y][0])
-						if self.is_a_parent_of(chunks[x][y][1]):
+						if chunks[x][y][1]!=null and self.is_a_parent_of(chunks[x][y][1]):
 							self.remove_child(chunks[x][y][1])
 				elif x!=0 and y!=0:
 					if not chunks.has(x):
