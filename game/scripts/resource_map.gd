@@ -24,7 +24,7 @@ func _ready():
 				chunks[x][y]=[met,oxy]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	#print(get_child_count())
 	var new_pos = player_chunk()
 	if not playerpos == new_pos:
