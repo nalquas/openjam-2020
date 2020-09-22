@@ -16,7 +16,7 @@ export (float) var fuel = 50.0
 export (float) var fuel_max = 50.0
 export (float) var fuel_rate = 0.5
 export (int) var oxygen = 0
-export (int) var oxygen_max = 10
+export (int) var oxygen_max = 50
 export (int) var ammo = 40
 export (int) var ammo_max = 40
 var speed = Vector2(0.0, 0.0)
@@ -203,7 +203,7 @@ func deal_damage(damage):
 
 func add_oxygen():
 	if oxygen < oxygen_max * oxygen_tank_level:
-		oxygen += 1
+		oxygen += 10
 		return true
 	return false
 

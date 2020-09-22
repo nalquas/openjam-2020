@@ -6,8 +6,8 @@ export (PackedScene) var bird
 
 var spawns_p_min = 2.0
 var metal = 0
-var oxygen = 50
-var oxygen_max = 50
+var oxygen = 75
+var oxygen_max = 75
 var paused = false
 var elapsed = 0.0
 
