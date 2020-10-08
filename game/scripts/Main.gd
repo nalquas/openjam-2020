@@ -18,6 +18,11 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
 		toggle_fullscreen()
+	if Input.is_action_just_pressed("screenshot"):
+		var img = get_viewport().get_texture().get_data()
+		img.flip_y()
+		img.save_png("res://screenshots/test.png")
+		print("image saved")
 
 func toggle_fullscreen():
 	OS.window_fullscreen = !OS.window_fullscreen
