@@ -19,6 +19,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
 		toggle_fullscreen()
 	if Input.is_action_just_pressed("screenshot"):
+		get_viewport().set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
+		yield(VisualServer, "frame_post_draw")
 		var img = get_viewport().get_texture().get_data()
 		img.flip_y()
 		img.save_png("res://screenshots/test.png")
