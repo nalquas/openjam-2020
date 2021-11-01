@@ -26,6 +26,7 @@ click_sound = ExtResource( 6 )
 [node name="GameOverScreen" parent="." instance=ExtResource( 8 )]
 
 [node name="HowToPlay" parent="." instance=ExtResource( 9 )]
+
 [connection signal="fullscreen" from="MainMenu" to="." method="_on_MainMenu_fullscreen"]
 [connection signal="howTo" from="MainMenu" to="." method="_on_MainMenu_howTo"]
 [connection signal="openCredits" from="MainMenu" to="." method="_on_MainMenu_openCredits"]

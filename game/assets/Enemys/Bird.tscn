@@ -32,6 +32,7 @@ radius = 10000.0
 
 [node name="Bird" type="KinematicBody2D" groups=[
 "Bird",
+"enemy",
 "pausable",
 ]]
 scale = Vector2( 0.1, 0.1 )
@@ -45,7 +46,7 @@ rotation = 1.39626
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -61,5 +62,6 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackEndArea"]
 shape = SubResource( 4 )
+
 [connection signal="body_entered" from="AttackStartArea" to="." method="_on_AttackStartArea_body_entered"]
 [connection signal="body_exited" from="AttackEndArea" to="." method="_on_AttackEndArea_body_exited"]

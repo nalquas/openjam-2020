@@ -25,7 +25,7 @@ func _physics_process(delta):
 					if x.position.distance_to(position) < distance:
 						distance = x.position.distance_to(position)
 						tracked_bird = x
-			if tracked_bird != null:
+			if is_instance_valid(tracked_bird):
 				bird_direction = tracked_bird.global_position - position
 				look_at(tracked_bird.global_position)
 				shoot()

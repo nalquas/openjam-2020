@@ -10,6 +10,7 @@ var playerpos = Vector2(0,0)
 var chunks = {}
 
 func _ready():
+	#Create starting chunks
 	for x in range(-distance,1+distance):
 		for y in range(-distance,1+distance):
 			if x!=0 and y!=0:
@@ -27,8 +28,8 @@ func _ready():
 func _physics_process(delta):
 	#print(get_child_count())
 	var new_pos = player_chunk()
+	#check if player entered new chunk
 	if not playerpos == new_pos:
-		#print("Update")
 		playerpos = new_pos
 		for x in range(-1-distance+playerpos.x,2+distance+playerpos.x):
 			for y in range(-1-distance+playerpos.y,2+distance+playerpos.y):
@@ -50,7 +51,7 @@ func _physics_process(delta):
 						self.add_child(oxy)
 						self.add_child(met)
 						chunks[x][y]=[met,oxy]
-					elif (chunks[x][y][0] != null) and (not chunks[x][y][0].is_inside_tree()):
+					elif is_instance_valid(chunks[x][y][0]) and (not chunks[x][y][0].is_inside_tree()):
 						self.add_child(chunks[x][y][0])
 						chunks[x][y][0].spawn_birds()
 						self.add_child(chunks[x][y][1])

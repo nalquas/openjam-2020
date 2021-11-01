@@ -40,6 +40,7 @@ var fueltank_level = 1
 func _ready():
 	set_engine_level(1)
 	set_fueltank_level(1)
+	$Activate_Radius/CollisionShape2D.shape.extents=get_viewport_rect().size*3
 
 func get_main():
 	# Get Main node
@@ -144,7 +145,7 @@ func _physics_process(delta):
 		
 			# activating tractorbeam
 			if Input.is_action_just_pressed("tractor_beam"):
-				if tracked_metal != null:
+				if is_instance_valid( tracked_metal):
 					tracked_metal.follow()
 				var overlapping_bodies = $TractorRadius.get_overlapping_bodies()
 				var distance = 10000
@@ -153,7 +154,7 @@ func _physics_process(delta):
 						if x.position.distance_to(position) < distance:
 							distance = x.position.distance_to(position)
 							tracked_metal = x
-				if tracked_metal != null:
+				if is_instance_valid(tracked_metal):
 					tracked_metal.follow()
 		else:
 			if not lifting_off:
@@ -273,3 +274,15 @@ func _on_ShipDamageArea_area_entered(area):
 	elif area.is_in_group("Oxygen"):
 		if add_oxygen():
 			area.instakill()
+
+
+
+
+func _on_Activate_Radius_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.standby(false)
+
+
+func _on_Activate_Radius_body_exited(body):
+	if body.is_in_group("enemy"):
+		body.standby(true)

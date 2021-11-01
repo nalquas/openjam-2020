@@ -9,6 +9,10 @@ var home = null # Configured by Bird spawner (metal)
 var hits = 0
 export var hp = 3
 var paused = false
+#Variable true if bird is in standby
+var do_standby = true
+#Variable true if bird should go into standby
+var standby_triggered = true
 # Variables necessary for circling around the metal
 var start_offset = 1.0
 var time_offset = 0.0
@@ -30,7 +34,7 @@ func get_main():
 
 func _physics_process(delta):
 	# Handle movement
-	if not paused:
+	if not (paused or do_standby):
 		if stay_home :
 			if home != null:
 				if home.is_inside_tree():
@@ -40,7 +44,9 @@ func _physics_process(delta):
 						192.0 * cos(start_offset + 2*PI + time_offset),
 						192.0 * sin(start_offset + 2*PI + time_offset)
 					)
-					
+					if standby_triggered:
+						if (position - home.global_position).length() < 200:
+							do_standby
 					# Stop staying at metal if it is taken by the player
 					if home.following or home.collected:
 						stay_home = false
@@ -96,3 +102,7 @@ func instakill():
 func toggle_pause():
 	paused = not paused
 	$AnimatedSprite.playing = not paused
+func standby(set_standby):
+	standby_triggered = set_standby
+	if not set_standby:
+		do_standby = false
